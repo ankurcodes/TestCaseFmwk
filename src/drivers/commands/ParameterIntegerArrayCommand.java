@@ -30,11 +30,13 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 
 		System.out.println("Enter choice ");
 		System.out.println("1: Random Array");
-		System.out.println("2: Sorted NonRepeated Increasing Array");
-		System.out.println("3: Sorted NonRepeated Decreasing Array");
-		System.out.println("4. Rotated Increasing Array");
-		System.out.println("5. Rotated Decreasing Array");
-		System.out.println("6. Consecutive Unsorted Array");
+		System.out.println("2: Sorted Increasing Array");
+		System.out.println("3: Sorted Increasing Array (duplicates)");
+		System.out.println("4: Sorted Decreasing Array");
+		System.out.println("5: Sorted Decreasing Array (duplicates)");
+		System.out.println("6. Rotated Increasing Array");
+		System.out.println("7. Rotated Decreasing Array");
+		System.out.println("8. Consecutive Unsorted Array");
 
 		whatMattersArray = s.nextInt();
 		System.out.println("Array Length:");
@@ -44,20 +46,22 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 		case 1:
 		case 2:
 		case 3:
-			System.out.println("Array Min Element");
-			min = s.nextInt();
-			System.out.println("Array Max Element");
-			max = s.nextInt();
-			break;
 		case 4:
 		case 5:
 			System.out.println("Array Min Element");
 			min = s.nextInt();
 			System.out.println("Array Max Element");
 			max = s.nextInt();
-			rotateIndexList = getArrayListLength(length);
 			break;
 		case 6:
+		case 7:
+			System.out.println("Array Min Element");
+			min = s.nextInt();
+			System.out.println("Array Max Element");
+			max = s.nextInt();
+			rotateIndexList = getArrayListLength(length);
+			break;
+		case 8:
 			System.out.println("Array Min Element");
 			min = s.nextInt();
 			System.out.println("Diff value");
@@ -67,7 +71,7 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 		}
 
 		arrayLengthlist = getArrayListLength(length);
-s.close();
+//s.close();
 	}
 
 	public ArrayList<Integer> getArrayListLength(int length) {
@@ -112,23 +116,29 @@ s.close();
 	public int[] logic(int number) {
 		int currentLength = arrayLengthlist.remove(0);
 		switch (number) {
+		
+	
+		
+		
 		case 1:
-
 			return IntegerArrayUtility.randomArrayGenerator(currentLength, min, max);
 		case 2:
-
-			return IntegerArrayUtility.unRepeatedIncreasingIntegerArray(currentLength, min, max);
+			return IntegerArrayUtility.increasingIntegerArray(currentLength, min, max);
 		case 3:
-			return IntegerArrayUtility.unRepeatedDecreasingIntegerArray(currentLength, min, max);
+			return IntegerArrayUtility.increasingIntegerArrayWithDuplicates(currentLength, min, max);
 		case 4:
-			int rotateBy = rotateIndexList.remove(0);
-			System.out.println("Rotate By:  " + rotateBy / 2);
-			return IntegerArrayUtility.rotatedIncreasingArray(currentLength, rotateBy / 2, min, max);
+			return IntegerArrayUtility.decreasingIntegerArray(currentLength, min, max);
 		case 5:
-
-			return null;
-
+			return IntegerArrayUtility.decreasingIntegerArrayWithDuplicates(currentLength, min, max);
 		case 6:
+			int rotateBy1 = rotateIndexList.remove(0);
+			System.out.println("Rotate By:  " + rotateBy1 / 2);
+			return IntegerArrayUtility.rotatedIncreasingArray(currentLength, rotateBy1 / 2, min, max);
+		case 7:
+			int rotateBy2 = rotateIndexList.remove(0);
+			System.out.println("Rotate By:  " + rotateBy2 / 2);
+			return IntegerArrayUtility.rotatedDecreasingArray(currentLength, rotateBy2 / 2, min, max);
+		case 8:
 			return IntegerArrayUtility.getConsecutiveUnsortedArray(currentLength, min, diff);
 		default:
 			return null;

@@ -58,7 +58,7 @@ public class TestCaseGenerator {
 		ArrayList<ArrayList<ArrayList<String>>> x = controller.generateParameters();
 		TestCaseWriter.write(x);
 		CommandSerializer.serializeParameterList(TestCaseController.parameterList);
-		s.close();
+		
 	}
 
 	public static void displayDataMenu() {
