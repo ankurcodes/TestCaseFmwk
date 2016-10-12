@@ -53,7 +53,7 @@ public class ParameterStringCommand implements ParameterCommand {
 			break;
 		}
 
-		s.close();
+		
 	}
 
 	public ArrayList<Integer> getArrayListLength(int length) {

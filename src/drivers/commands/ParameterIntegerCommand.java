@@ -36,7 +36,7 @@ public class ParameterIntegerCommand implements ParameterCommand {
 			System.out.println("MAX:");
 			max = s.nextInt();
 		}
-		s.close();
+		
 	}
 
 	public int logic(int number) {

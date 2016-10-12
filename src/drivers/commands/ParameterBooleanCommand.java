@@ -23,7 +23,7 @@ public class ParameterBooleanCommand implements ParameterCommand{
 		
 		
 		whatMattersBoolean = s.next().charAt(0);
-		s.close();
+	
 	}
 
 	public boolean logic(char number) {

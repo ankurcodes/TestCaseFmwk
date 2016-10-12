@@ -24,7 +24,7 @@ public class ParameterCharacterCommand implements ParameterCommand {
 		System.out.println("3: Character [0 to 9]");
 		
 		whatMattersCharacter = s.nextInt();
-		s.close();
+		
 	}
 
 	public char logic(int number) {

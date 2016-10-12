@@ -56,7 +56,7 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 		}
 		arrayLengthlist = getArrayListLength(length);
 		arrayBredthlist = getArrayListLength(bredth);
-		s.close();
+	
 	}
 
 	public ArrayList<Integer> getArrayListLength(int length) {
