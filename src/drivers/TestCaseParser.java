@@ -14,7 +14,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
+import assignments.runners.Days30Runner;
 import assignments.runners.LinkedListRunner;
+import assignments.solutions.Days30Solution;
 import drivers.commands.ParameterCommand;
 import util.serialize_deserialize.CommandDeSerializer;
 import util.stats.Stats;
@@ -56,7 +58,7 @@ public class TestCaseParser {
 		currentTestCaseNumber = 1;
 		readTestCaseFile(largeFolderOutputPath, false);
 		System.out.println("Successfully Completed...\n\n");
-
+		System.out.println("File Loc: "+smallFolderOutputPath);
 		Stats stats = Stats.getStatsInstance();
 		stats.showStats();
 
@@ -121,10 +123,10 @@ public class TestCaseParser {
 		}
 
 		Object param1 = parameterList.get(0).read(input.nextLine());
-	//	Object param2 = parameterList.get(1).read(input.nextLine());
-	//	Object param3 = parameterList.get(2).read(input.nextLine());
+		// Object param2 = parameterList.get(1).read(input.nextLine());
+		// Object param3 = parameterList.get(2).read(input.nextLine());
 
-		LinkedListRunner.Ques_9Test((int[]) param1,  outputFile);
+		Days30Runner.Ques_16Test((int[]) param1, outputFile);
 	}
 
 	private static void cleanIOFolders(String filePath) {

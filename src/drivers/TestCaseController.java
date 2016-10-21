@@ -24,18 +24,6 @@ public class TestCaseController {
 		return instance;
 	}
 
-	/**
-	 * steps Generate Menu Parse Menu Identify number of input parameter
-	 * //parameter1 : manually // paramtere 2: auto fill // also add comments to
-	 * input parameter in testcases that parser will ignore For each input:
-	 * Identify the dataType Do Action based on Menu input Generate TestCases
-	 * [small 3 & large 6] verify this TestCase after verified passed to
-	 * TestCaseWriter // view it to user // give option to user to accept or
-	 * discard it // in the end view all the test cases Generate TestCases
-	 * results in end run your code and view graph.... // while running also
-	 * display error if any
-	 */
-
 	public static List<ParameterCommand> parameterList = new ArrayList<ParameterCommand>();
 
 	public void putParameter(ParameterCommand parameter) {
@@ -45,14 +33,16 @@ public class TestCaseController {
 	public ArrayList<ArrayList<ArrayList<String>>> generateParameters() {
 		ArrayList<ArrayList<ArrayList<String>>> finalResult = new ArrayList<ArrayList<ArrayList<String>>>();
 		for (int no_of_testCases = 0; no_of_testCases < TestCaseConstants.EXACT_TEST_CASE; no_of_testCases++) {
-			
+
 			ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
 			for (int i = 0; i < parameterList.size(); i++) {
 
 				ArrayList<String> list = new ArrayList<String>();
 				parameterList.get(i).execute(list);
 				result.add(list);
+				
 			}
+			System.out.println("Current TestCase No "+ no_of_testCases);
 			finalResult.add(result);
 
 		}

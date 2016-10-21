@@ -45,6 +45,7 @@ public class TestCaseWriter {
 		System.out.println("LARGE INPUT files successfully created ....  ");
 		openFileToEdit(smallTestCasesInputFile);
 		openFileToEdit(largeTestCasesInputFile);
+		System.out.println("File Loc: "+ smallTestCasesInputFile);
 	}
 
 	public static void openFileToEdit(File file) {

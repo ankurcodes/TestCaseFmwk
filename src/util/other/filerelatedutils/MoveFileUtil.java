@@ -8,16 +8,24 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class MoveFileUtil {
-	public static void main(String[] args) {
-		int arr[] = { 1, 3, 4, 8, 10, 11, 13, 15, 16, 18, 22, 23, 24 };
-		for (int i : arr) {
-			String src="/Users/ankurkumar/Desktop/TestCases/Ques_"+i+"/small/out/output6.txt";
-			String dest="/Users/ankurkumar/Desktop/TestCases/Ques_" + i + "/large/out/output6.txt";
-			moveToLoc(src, dest);
+	public static void main(String[] args) throws IOException {
+		// "ContainsX",
+		String arr2[] = { "ContainsX","isIdentical", "maxSumNode", "nextLargerElement", "NodesGreaterThanX", "numLeafNodes", "replaceWithDepthValue", "secondLargest"};
+		for (String i : arr2) {
+			int arr1[] = { 1,2,3,4,5,6};
+			for(int k:arr1){
+				String src="/Users/ankurkumar/Downloads/GenricTrees/"+i+"/in/input"+k+ ".txt";
+				String dest="/Users/ankurkumar/Downloads/GenricTrees/" + i + "/large/in/input"+(k)+".txt";
+				moveToLoc(src, dest);
+			}
 		}
 	}
+///Users/ankurkumar/Downloads/GenricTrees/isIdentical/in
+	public static void moveToLoc(String source, String dest) throws IOException {
+		File f = new File(dest);
 
-	public static void moveToLoc(String source, String dest) {
+		f.getParentFile().mkdirs(); 
+		f.createNewFile();
 		InputStream inStream = null;
 		OutputStream outStream = null;
 

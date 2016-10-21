@@ -24,7 +24,6 @@ public class LinkedListUtility {
 		LinkedListNode<Integer> temp= head;
 		StringBuilder outputString = new StringBuilder("");
 		while (temp != null) {
-
 			outputString.append(temp.getData() + " ");
 			temp = temp.next;
 		}

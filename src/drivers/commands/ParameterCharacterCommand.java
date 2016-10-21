@@ -62,10 +62,6 @@ public class ParameterCharacterCommand implements ParameterCommand {
 		return line.trim().charAt(0);
 	}
 
-	@Override
-	public void setStatus(boolean b) {
-		// TODO Auto-generated method stub
 
-	}
 
 }

@@ -22,6 +22,7 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 	private int diff;
 	List<Integer> arrayLengthlist = new ArrayList<Integer>(9);
 	List<Integer> rotateIndexList = new ArrayList<Integer>(9);
+	private AssignmentType currentAssignmentType= AssignmentType.ARRAY;
 
 	@Override
 	public void menu() {
@@ -71,7 +72,7 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 		}
 
 		arrayLengthlist = getArrayListLength(length);
-//s.close();
+		// s.close();
 	}
 
 	public ArrayList<Integer> getArrayListLength(int length) {
@@ -116,10 +117,7 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 	public int[] logic(int number) {
 		int currentLength = arrayLengthlist.remove(0);
 		switch (number) {
-		
-	
-		
-		
+
 		case 1:
 			return IntegerArrayUtility.randomArrayGenerator(currentLength, min, max);
 		case 2:
@@ -146,31 +144,80 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 
 	}
 
-	@Override
-	public boolean execute(ArrayList<String> result) {
+	private boolean execute_L(ArrayList<String> result) {
+		StringBuilder str = new StringBuilder();
+		int arr[] = logic(whatMattersArray);
+		for (int j = 0; j < arr.length; j++) {
+			str.append(arr[j] + " ");
+		}
+		str.append(-1);
+		result.add(str.toString());
+		return true;
+	}
+
+	private boolean execute_A(ArrayList<String> result) {
 		StringBuilder str = new StringBuilder();
 		int arr[] = logic(whatMattersArray);
 		str.append(arr.length + " ");
 		for (int j = 0; j < arr.length; j++) {
-			str = str.append(arr[j] + " ");
+			str.append(arr[j] + " ");
 		}
 		result.add(str.toString());
 		return true;
 	}
 
+	
 	@Override
-	public void setStatus(boolean b) {
+	public boolean execute(ArrayList<String> result) {
+		return execute(result, currentAssignmentType);
+	}
 
+	public boolean execute(ArrayList<String> result, AssignmentType type) {
+		switch (type) {
+		case ARRAY:
+			return execute_A(result);
+		case LINKEDLIST:
+			return execute_L(result);
+		default:
+			return true;
+		}
 	}
 
 	@Override
 	public int[] read(String line) {
+		return read(line, currentAssignmentType);
+	}
+
+	public int[] read(String line, AssignmentType type) {
+		switch (type) {
+		case ARRAY:
+			return read_A(line);
+		case LINKEDLIST:
+			return read_L(line);
+		default:
+			return null;
+		}
+	}
+
+	public int[] read_A(String line) {
 		String[] valueStr = new String(line).trim().split(" ");
 		int[] inputArrayParameter = new int[valueStr.length - 1];
 		int arrLength = Integer.parseInt(valueStr[0].trim());
 		for (int i = 0; i < arrLength; i++) {
 			if (!valueStr[i + 1].isEmpty()) {
 				inputArrayParameter[i] = Integer.parseInt(valueStr[i + 1].trim());
+			}
+		}
+		return inputArrayParameter;
+	}
+
+	public int[] read_L(String line) {
+		String[] valueStr = new String(line).trim().split(" ");
+		int[] inputArrayParameter = new int[valueStr.length - 1];
+
+		for (int i = 0; i < inputArrayParameter.length; i++) {
+			if (!valueStr[i].isEmpty()) {
+				inputArrayParameter[i] = Integer.parseInt(valueStr[i].trim());
 			}
 		}
 		return inputArrayParameter;

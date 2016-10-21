@@ -12,5 +12,5 @@ public class TestCaseConstants {
 	public static final String SMALL_INPUT_FILE = "small/in/input";
 	public static final String LARGE_OUTPUT_FILE = "large/out/output";
 	public static final String SMALL_OUTPUT_FILE = "small/out/output";
-	public static final String TESTCASE_FOLDER_PATH = "/Users/ankurkumar/Desktop/TestCaseFolder/LinkedList/";
+	public static final String TESTCASE_FOLDER_PATH = "/Users/ankurkumar/Desktop/TestCaseFolder/Array/";
 }

@@ -48,11 +48,7 @@ public class ParameterBooleanCommand implements ParameterCommand{
 		result.add(ans+"");
 		return true;
 	}
-	@Override
-	public void setStatus(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 
 	@Override

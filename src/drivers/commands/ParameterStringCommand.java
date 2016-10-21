@@ -124,10 +124,7 @@ public class ParameterStringCommand implements ParameterCommand {
 		return true;
 	}
 
-	@Override
-	public void setStatus(boolean b) {
 
-	}
 
 	@Override
 	public String read(String line) {

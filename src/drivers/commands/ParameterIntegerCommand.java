@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class ParameterIntegerCommand implements ParameterCommand {
 
-	
 	/**
 	 * 
 	 */
@@ -17,26 +16,21 @@ public class ParameterIntegerCommand implements ParameterCommand {
 
 	@Override
 	public void menu() {
-
 		Scanner s = new Scanner(System.in);
-
 		System.out.println("Enter choice ");
 		System.out.println("1: Zero");
 		System.out.println("2: Positive");
 		System.out.println("3: Negative");
 		System.out.println("4: Max Integer Value");
 		System.out.println("5: Min Integer Value");
-
 		whatMattersInteger = s.nextInt();
 		if (whatMattersInteger == 2 || whatMattersInteger == 3) {
 			System.out.println("Enter Range:");
-
 			System.out.println("MIN:");
 			min = s.nextInt();
 			System.out.println("MAX:");
 			max = s.nextInt();
 		}
-		
 	}
 
 	public int logic(int number) {
@@ -53,15 +47,7 @@ public class ParameterIntegerCommand implements ParameterCommand {
 			return Integer.MIN_VALUE;
 		default:
 			return -1;
-
 		}
-
-	}
-
-	@Override
-	public void setStatus(boolean b) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

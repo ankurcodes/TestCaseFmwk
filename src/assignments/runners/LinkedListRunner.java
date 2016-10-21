@@ -41,7 +41,7 @@ public class LinkedListRunner {
 		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
-		LinkedListNode<Integer> resultHead = LinkedListSolution.swapNodes(head,pos1,pos2);
+		LinkedListNode<Integer> resultHead = LinkedListSolution.swap_nodes(head,pos1,pos2);
 		stats.endStat();
 		LinkedListUtility.printList(resultHead,filePath);
 	}
@@ -54,9 +54,9 @@ public class LinkedListRunner {
 		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
-		LinkedListSolution.removeDuplicates(head);
+		LinkedListNode<Integer> resultHead = LinkedListSolution.removeDuplicates(head);
 		stats.endStat();
-		LinkedListUtility.printList(head,filePath);
+		LinkedListUtility.printList(resultHead,filePath);
 	}
 	/**
 	 * Q_5
@@ -90,19 +90,32 @@ public class LinkedListRunner {
 	 * 
 	 * */
 	
-	public static void Ques_7Test(int arr[], String filePath){
-		
+	public static void Ques_7Test_BubbleRecursion(int arr[], String filePath){
+		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
+		Stats stats = Stats.getStatsInstance();
+		stats.startStat();
+		LinkedListNode<Integer>headResult = LinkedListSolution.bubbleSortRec(head);
+		stats.endStat();
+		LinkedListUtility.printList(headResult,filePath);
+	}
+	public static void Ques_7Test_MergeRecursion(int arr[], String filePath){
+		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
+		Stats stats = Stats.getStatsInstance();
+		stats.startStat();
+		LinkedListNode<Integer>headResult = LinkedListSolution.mergeSort(head);
+		stats.endStat();
+		LinkedListUtility.printList(headResult,filePath);
 	}
 	
 	/**
 	 * Q_8:
 	 * bubbleSort
 	 * */
-	public static void Ques_8Test(int arr[], String filePath){
+	public static void Ques_8Test_BubbleIterative(int arr[], String filePath){
 		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
-		LinkedListNode<Integer>headResult = LinkedListSolution.bubbleSort(head);
+		LinkedListNode<Integer>headResult = LinkedListSolution.bubbleSortIterative(head);
 		stats.endStat();
 		LinkedListUtility.printList(headResult,filePath);
 	}
@@ -113,7 +126,7 @@ public class LinkedListRunner {
 	 * */
 	
 	public static void Ques_9Test(int arr[],String filePath){
-		LinkedListNode<Integer> head=null;
+		LinkedListNode<Integer> head=LinkedListUtility.arrayToLinkedList(arr);
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
 		boolean headResult =LinkedListSolution.isPalindrome_2(head);
@@ -150,7 +163,7 @@ public class LinkedListRunner {
 		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
-		LinkedListNode<Integer> headresult = LinkedListSolution.rearrangeEvenOdd(head);
+		LinkedListNode<Integer> headresult = LinkedListSolution.sortEvenOdd(head);
 		stats.endStat();
 		LinkedListUtility.printList(headresult,filePath);
 	}

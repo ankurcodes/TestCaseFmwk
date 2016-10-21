@@ -61,40 +61,38 @@ public class LinkedListSolution {
 	/**
 	 * Q_3: Swap Nodes
 	 */
-	public static LinkedListNode<Integer> swapNodes(LinkedListNode<Integer> head, int x, int y) {
-		// Nothing to do if x and y are same
-		if (x == y)
-			return head;
-
-		LinkedListNode<Integer> prevX = null, currX = head;
-		while (currX != null && currX.data != x) {
-			prevX = currX;
-			currX = currX.next;
+	public static LinkedListNode<Integer> swap_nodes(LinkedListNode<Integer> head, int i, int j) {
+		LinkedListNode<Integer> temp = head, prev = null;
+		LinkedListNode<Integer> node1 = null, node2 = null, node1_prev = null, node2_prev = null;
+		int pos = 0;
+		while (temp != null) {
+			if (pos == i) {
+				node1_prev = prev;
+				node1 = temp;
+			} else if (pos == j) {
+				node2_prev = prev;
+				node2 = temp;
+			}
+			prev = temp;
+			temp = temp.next;
+			pos++;
 		}
 
-		LinkedListNode<Integer> prevY = null, currY = head;
-		while (currY != null && currY.data != y) {
-			prevY = currY;
-			currY = currY.next;
+		if (node1_prev != null) {
+			node1_prev.next = node2;
+		} else {
+			head = node2;
 		}
 
-		if (currX == null || currY == null)
-			return head;
+		if (node2_prev != null) {
+			node2_prev.next = node1;
+		} else {
+			head = node1;
+		}
 
-		if (prevX != null)
-			prevX.next = currY;
-		else // make y the new head
-			head = currY;
-
-		if (prevY != null)
-			prevY.next = currX;
-		else // make x the new head
-			head = currX;
-
-		// Swap next pointers
-		LinkedListNode<Integer> temp = currX.next;
-		currX.next = currY.next;
-		currY.next = temp;
+		LinkedListNode<Integer> temp1 = node2.next;
+		node2.next = node1.next;
+		node1.next = temp1;
 
 		return head;
 	}
@@ -103,27 +101,22 @@ public class LinkedListSolution {
 	 * Q_4: Remove duplicates
 	 */
 
-	public static void removeDuplicates(LinkedListNode<Integer> head) {
+	public static LinkedListNode<Integer> removeDuplicates(LinkedListNode<Integer> head) {
 		LinkedListNode<Integer> current = head;
-		LinkedListNode<Integer> next_next;
 
 		if (head == null)
-			return;
+			return null;
 
 		while (current.next != null) {
-			if (current.data == current.next.data) {
-				next_next = current.next.next;
-				current.next = null;
-				current.next = next_next;
+			if (current.data.equals(current.next.data)) {
+				current.next = current.next.next;
 			} else {
 				current = current.next;
 			}
 		}
-	}
 
-	/**
-	 * Q_5: Merge two list
-	 */
+		return head;
+	}
 
 	public static LinkedListNode<Integer> merge(LinkedListNode<Integer> head1, LinkedListNode<Integer> head2) {
 		LinkedListNode<Integer> resultHead = null;
@@ -148,40 +141,67 @@ public class LinkedListSolution {
 				resultTail = resultTail.next;
 			}
 		}
-
 		resultTail.next = head1 == null ? head2 : head1;
 		return resultHead;
-
 	}
 
 	/**
 	 * Q_6: Find midpoint of a Linked List
 	 */
 	public static int printMiddel(LinkedListNode<Integer> head) {
-		LinkedListNode<Integer> slow_ptr = head;
-		LinkedListNode<Integer> fast_ptr = head;
-		if (head != null) {
-			while (fast_ptr != null && fast_ptr.next != null) {
-				fast_ptr = fast_ptr.next.next;
-				slow_ptr = slow_ptr.next;
-			}
-			return slow_ptr.data;
+		if (head == null) {
+			return -1;
 		}
-		return -1;
+		LinkedListNode<Integer> slow_ptr = head;
+		LinkedListNode<Integer> fast_ptr = head.next;
+
+		while (fast_ptr != null && fast_ptr.next != null) {
+			fast_ptr = fast_ptr.next.next;
+			slow_ptr = slow_ptr.next;
+		}
+		return slow_ptr.data;
+
 	}
 
 	/**
-	 * Q_7: Bubble Sort [non recursive]
+	 * Q_7: Bubble Sort [recursion]
 	 */
-	public static LinkedListNode<Integer> bubbleSort(LinkedListNode<Integer> head) {
+	public static LinkedListNode<Integer> bubbleSortRec(LinkedListNode<Integer> start) {
+		if (start == null)
+			return null;
+		start.next = bubbleSortRec(start.next);
+		if (start.next != null && start.data > start.next.data) {
+			start = move(start);
+		}
+		return start;
+	}
+
+	private static LinkedListNode<Integer> move(LinkedListNode<Integer> x) {
+		LinkedListNode<Integer> n, p, ret;
+
+		p = x;
+		n = x.next;
+		ret = n;
+		while (n != null && x.data > n.data) {
+			p = n;
+			n = n.next;
+		}
+		/* we now move the top item between p and n */
+		p.next = x;
+		x.next = n;
+		return ret;
+	}
+
+	/**
+	 * Q_8: Bubble Sort [non recursive]
+	 */
+	public static LinkedListNode<Integer> bubbleSortIterative(LinkedListNode<Integer> head) {
 		int n = LinkedListUtility.length(head);
 
 		for (int i = 0; i < n - 1; i++) {
 			LinkedListNode<Integer> prev = null;
 			LinkedListNode<Integer> curr = head;
 			for (int j = 0; j < n - i - 1; j++) {
-				// while (curr != null && curr.next != null) {
-
 				if (curr.getData() <= curr.next.getData()) {
 					prev = curr;
 					curr = curr.next;
@@ -258,37 +278,33 @@ public class LinkedListSolution {
 	/**
 	 * Merge sort [recursive sol]
 	 */
-	public static LinkedListNode<Integer> mergeSortList(LinkedListNode<Integer> head) {
+	public static LinkedListNode<Integer> mergeSort(LinkedListNode<Integer> head) {
 		if (head == null || head.next == null) {
 			return head;
 		}
+		LinkedListNode<Integer> mid = midPoint(head);
+		LinkedListNode<Integer> head1 = head;
+		LinkedListNode<Integer> head2 = mid.next;
+		mid.next = null;
+		head1 = mergeSort(head1);
+		head2 = mergeSort(head2);
+		LinkedListNode<Integer> answer = merge(head1, head2);
+		return answer;
 
-		int count = 0;
-		LinkedListNode<Integer> p = head;
-		while (p != null) {
-			count++;
-			p = p.next;
+	}
+
+	public static LinkedListNode<Integer> midPoint(LinkedListNode<Integer> head) {
+		if (head == null) {
+			return head;
 		}
+		LinkedListNode<Integer> slow_ptr = head;
+		LinkedListNode<Integer> fast_ptr = head.next;
 
-		int middle = count / 2;
-
-		LinkedListNode<Integer> l = head, r = null;
-		LinkedListNode<Integer> p2 = head;
-		int countHalf = 0;
-		while (p2 != null) {
-			countHalf++;
-			LinkedListNode<Integer> next = p2.next;
-			if (countHalf == middle) {
-				p2.next = null;
-				r = next;
-			}
-			p2 = next;
+		while (fast_ptr != null && fast_ptr.next != null) {
+			fast_ptr = fast_ptr.next.next;
+			slow_ptr = slow_ptr.next;
 		}
-		LinkedListNode<Integer> h1 = mergeSortList(l);
-		LinkedListNode<Integer> h2 = mergeSortList(r);
-		LinkedListNode<Integer> merged = merge(h1, h2);
-
-		return merged;
+		return slow_ptr;
 	}
 
 	/**
@@ -327,9 +343,10 @@ public class LinkedListSolution {
 	 * Q_9: Reverse the second list and compare two sublists. The time is O(n)
 	 * and space is O(1).
 	 */
+
 	public static boolean isPalindrome_2(LinkedListNode<Integer> head) {
 
-		if (head == null || head.next == null){
+		if (head == null || head.next == null) {
 			return true;
 		}
 
@@ -344,25 +361,13 @@ public class LinkedListSolution {
 
 		LinkedListNode<Integer> secondHead = slow.next;
 		slow.next = null;
-
-		// reverse second part of the list
-		LinkedListNode<Integer> p1 = secondHead;
-		LinkedListNode<Integer> p2 = p1.next;
-
-		while (p1 != null && p2 != null) {
-			LinkedListNode<Integer> temp = p2.next;
-			p2.next = p1;
-			p1 = p2;
-			p2 = temp;
-		}
-
-		secondHead.next = null;
+		secondHead = reverse_I(secondHead);
 
 		// compare two sublists now
-		LinkedListNode<Integer> p = (p2 == null ? p1 : p2);
+		LinkedListNode<Integer> p = secondHead;
 		LinkedListNode<Integer> q = head;
 		while (p != null) {
-			if (p.data != q.data){
+			if (!p.data.equals(q.data)) {
 				return false;
 			}
 
@@ -412,53 +417,46 @@ public class LinkedListSolution {
 	 * placed after odd numbers.
 	 */
 
-	public static LinkedListNode<Integer> rearrangeEvenOdd(LinkedListNode<Integer> head) {
-		// Corner case
-		if (head == null)
-			return null;
-
-		// Initialize first nodes of even and
-		// odd lists
-		LinkedListNode<Integer> odd = head;
-		LinkedListNode<Integer> even = head.next;
-
-		// Remember the first node of even list so
-		// that we can connect the even list at the
-		// end of odd list.
-		LinkedListNode<Integer> evenFirst = even;
-
-		while (true) {
-			// If there are no more nodes, then connect
-			// first node of even list to the last node
-			// of odd list
-			if (odd == null || even == null || even.next == null) {
-				odd.next = evenFirst;
-				break;
-			}
-
-			// Connecting odd nodes
-			odd.next = even.next;
-			odd = even.next;
-
-			// If there are NO more even nodes after
-			// current odd.
-			if (odd.next == null) {
-				even.next = null;
-				odd.next = evenFirst;
-				break;
-			}
-
-			// Connecting even nodes
-			even.next = odd.next;
-			even = odd.next;
+	public static LinkedListNode<Integer> sortEvenOdd(LinkedListNode<Integer> head) {
+		if (head == null) {
+			return head;
 		}
-
-		return head;
+		LinkedListNode<Integer> evenHead = null, oddHead = null, evenTail = null, oddTail = null;
+		while (head != null) {
+			if (head.data % 2 == 0) {
+				if (evenHead == null) {
+					evenHead = head;
+					evenTail = head;
+				} else {
+					evenTail.next = head;
+					evenTail = evenTail.next;
+				}
+			} else {
+				if (oddHead == null) {
+					oddHead = head;
+					oddTail = head;
+				} else {
+					oddTail.next = head;
+					oddTail = oddTail.next;
+				}
+			}
+			head = head.next;
+		}
+		if (oddHead == null) {
+			return evenHead;
+		} else {
+			oddTail.next = evenHead;
+		}
+		if (evenHead != null) {
+			evenTail.next = null;
+		}
+		return oddHead;
 	}
 
 	/**
 	 * Q_12: Print a given linked list in reverse order.
 	 */
+
 	public static void printReverseRecursive(LinkedListNode<Integer> root) {
 		if (root == null) {
 			return;

@@ -134,10 +134,6 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 		return true;
 	}
 
-	@Override
-	public void setStatus(boolean b) {
-
-	}
 
 	@Override
 	public int[][] read(String line) {

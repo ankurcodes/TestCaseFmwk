@@ -58,11 +58,9 @@ public class TestCaseGenerator {
 		ArrayList<ArrayList<ArrayList<String>>> x = controller.generateParameters();
 		TestCaseWriter.write(x);
 		CommandSerializer.serializeParameterList(TestCaseController.parameterList);
-		
 	}
 
 	public static void displayDataMenu() {
-
 		System.out.println("Enter Data Type");
 		System.out.println("...... 1: Integer");
 		System.out.println("...... 2: Character");

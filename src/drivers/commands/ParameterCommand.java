@@ -7,7 +7,6 @@ public interface ParameterCommand extends  Serializable{
 	
 	public void menu();
 	public boolean execute(ArrayList<String> result);
-	public void setStatus(boolean b);
 	public Object read(String line);
 	public String toString();
 }
