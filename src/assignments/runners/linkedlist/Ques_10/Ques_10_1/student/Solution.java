@@ -1,4 +1,4 @@
-package assignments.runners.linkedlist.Ques_10.Ques_10_1;
+package assignments.runners.linkedlist.Ques_10.Ques_10_1.student;
 
 
 /*
@@ -21,7 +21,7 @@ package assignments.runners.linkedlist.Ques_10.Ques_10_1;
 
 }
  * */
-public class ScaffoldSolution {
+public class Solution {
 	public static LinkedListNode<Integer> reverse_I(LinkedListNode<Integer> head) {
 		
 	}

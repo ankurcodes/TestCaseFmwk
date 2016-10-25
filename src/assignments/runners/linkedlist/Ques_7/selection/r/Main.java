@@ -1,8 +1,9 @@
+package assignments.runners.linkedlist.Ques_7.selection.r;
 import java.util.Scanner;
 
 import LinkedList.Node;
 
-public class Runner {
+public class Main {
      
 	public static Node<Integer> takeInput()
 	{

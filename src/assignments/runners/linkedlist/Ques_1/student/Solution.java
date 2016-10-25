@@ -1,4 +1,4 @@
-package assignments.runners.linkedlist.Ques_1;
+package assignments.runners.linkedlist.Ques_1.student;
 
 
 
@@ -23,7 +23,7 @@ class LinkedListNode<T> {
 
 }
 * */
-public class ScaffoldSolution {
+public class Solution {
 
 	public static <T> LinkedListNode<T> insertR(LinkedListNode<T> head, int pos, T data) {
 		

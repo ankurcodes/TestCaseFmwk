@@ -1,4 +1,4 @@
-package assignments.runners.linkedlist.Ques_8;
+package assignments.runners.linkedlist.Ques_8.student;
 /*
 class LinkedListNode<T> {
 	public T data;
@@ -19,6 +19,6 @@ class LinkedListNode<T> {
 
 }
 * */
-public class ScaffoldSolution {
+public class Solution {
 
 }

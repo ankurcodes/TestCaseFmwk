@@ -2,8 +2,6 @@ package assignments.runners.linkedlist.Ques_5;
 
 import java.util.Scanner;
 
-import assignments.runners.linkedlist.Ques_6.LinkedListNode;
-
 class LinkedListNode<T> {
 	public T data;
 	public LinkedListNode<T> next;
@@ -17,23 +15,25 @@ class LinkedListNode<T> {
 		return data;
 	}
 
-	public void setData(T data) {		
+	public void setData(T data) {
 		this.data = data;
 	}
 
 }
-public class Runner {
-	private static Scanner s= new Scanner(System.in);
+
+public class Main {
+	private static Scanner s = new Scanner(System.in);
+
 	public static void main(String[] args) {
 		print(Solution.merge(input(), input()));
 	}
-	
+
 	public static LinkedListNode<Integer> input() {
 		int data = s.nextInt();
-		
+
 		LinkedListNode<Integer> head = null;
 		LinkedListNode<Integer> tail = null;
-		while (data!=-1) {
+		while (data != -1) {
 			LinkedListNode<Integer> newNode = new LinkedListNode<Integer>(data);
 			if (head == null) {
 				head = newNode;

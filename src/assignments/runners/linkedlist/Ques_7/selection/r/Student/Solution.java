@@ -1,6 +1,7 @@
+package assignments.runners.linkedlist.Ques_7.selection.r.Student;
 import LinkedList.Node;
 
-public class solution {
+public class Solution {
 	
 	
 	

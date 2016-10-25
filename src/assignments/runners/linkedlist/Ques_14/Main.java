@@ -1,3 +1,4 @@
+package assignments.runners.linkedlist.Ques_14;
 import java.util.Scanner;
 
 class LinkedListNode<T> {
@@ -18,7 +19,7 @@ class LinkedListNode<T> {
 	}
 
 }
-public class Runner {
+public class Main {
 	static Scanner s = new Scanner(System.in);
 
 	public static void main(String[] args) {

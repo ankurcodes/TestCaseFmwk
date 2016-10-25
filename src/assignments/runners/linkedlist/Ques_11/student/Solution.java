@@ -1,4 +1,4 @@
-package assignments.runners.linkedlist.Ques_11;
+package assignments.runners.linkedlist.Ques_11.student;
 
 
 /*
@@ -21,7 +21,7 @@ class LinkedListNode<T> {
 
 }
 * */
-public class ScaffoldSolution {
+public class Solution {
 	public static LinkedListNode<Integer> sortEvenOdd(LinkedListNode<Integer> head) {
 		
 	}

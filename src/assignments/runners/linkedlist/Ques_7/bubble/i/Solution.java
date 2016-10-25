@@ -1,4 +1,5 @@
-public class solution {
+package assignments.runners.linkedlist.Ques_7.bubble.i;
+public class Solution {
 
 	private static int length(LinkedListNode<Integer> head) {
 		int count = 0;

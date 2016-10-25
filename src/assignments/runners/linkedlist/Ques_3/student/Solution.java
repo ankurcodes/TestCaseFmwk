@@ -1,3 +1,4 @@
+package assignments.runners.linkedlist.Ques_3.student;
 
 
 
@@ -21,7 +22,7 @@ class LinkedListNode<T> {
 
 }
 * */
-public class ScaffoldSolution {
+public class Solution {
 	public static  LinkedListNode<Integer> swap_nodes(LinkedListNode<Integer> head,int i,int j){
 		
 	}

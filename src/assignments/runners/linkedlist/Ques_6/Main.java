@@ -4,7 +4,7 @@ package assignments.runners.linkedlist.Ques_6;
 
 import java.util.Scanner;
 
-public class Runner {
+public class Main {
 	private static Scanner s = new Scanner(System.in);
 
 	public static void main(String[] args) {

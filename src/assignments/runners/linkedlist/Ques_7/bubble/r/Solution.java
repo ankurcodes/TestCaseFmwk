@@ -1,5 +1,6 @@
+package assignments.runners.linkedlist.Ques_7.bubble.r;
 
-public class solution {
+public class Solution {
 
 	static LinkedListNode<Integer> bubbleSortRec(LinkedListNode<Integer> start) {
 		if (start == null)

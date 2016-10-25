@@ -1,4 +1,4 @@
-package assignments.runners.linkedlist.Ques_5;
+package assignments.runners.linkedlist.Ques_5.student;
 
 import assignments.commondatastructure.LinkedListNode;
 /*
@@ -21,7 +21,7 @@ class LinkedListNode<T> {
 
 }
 * */
-public class ScaffoldSolution {
+public class Solution {
 	public static LinkedListNode<Integer> merge(LinkedListNode<Integer> head1, LinkedListNode<Integer> head2) {
 
 	}

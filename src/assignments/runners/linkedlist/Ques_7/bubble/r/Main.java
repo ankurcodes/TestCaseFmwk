@@ -1,3 +1,4 @@
+package assignments.runners.linkedlist.Ques_7.bubble.r;
 import java.util.Scanner;
 
 class LinkedListNode<T> {
@@ -10,7 +11,7 @@ class LinkedListNode<T> {
 	}
 }
 
-public class Runner {
+public class Main {
 	private static Scanner s = new Scanner(System.in);
 
 	public static LinkedListNode<Integer> input() {

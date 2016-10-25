@@ -1,3 +1,4 @@
+package assignments.runners.linkedlist.Ques_9.student;
 
 /*
 class LinkedListNode<T> {
@@ -19,6 +20,6 @@ class LinkedListNode<T> {
 
 }
 * */
-public class ScaffoldSolution {
+public class Solution {
 	public static boolean isPalindrome_2(LinkedListNode<Integer> head) {}
 }

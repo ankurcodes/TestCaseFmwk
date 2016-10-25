@@ -1,3 +1,4 @@
+package assignments.runners.linkedlist.Ques_2.student;
 
 /*
 class LinkedListNode<T> {
@@ -19,7 +20,7 @@ class LinkedListNode<T> {
 
 }
 * */
-public class ScaffoldSolution {
+public class Solution {
 	public static LinkedListNode<Integer> delete(LinkedListNode<Integer> head, int position) {
 		
 	}

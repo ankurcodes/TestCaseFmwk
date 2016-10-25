@@ -1,5 +1,6 @@
+package assignments.runners.linkedlist.Ques_7.bubble.i.student;
 
-public class ScaffoldSolution {
+public class Solution {
 	
 	
 	
