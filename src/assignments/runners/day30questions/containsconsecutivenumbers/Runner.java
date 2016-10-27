@@ -1,7 +1,6 @@
 package assignments.runners.day30questions.containsconsecutivenumbers;
 
 import assignments.commonutils.ArrayUtility;
-import assignments.solutions.Days30Solution;
 import util.stats.Stats;
 
 public class Runner {

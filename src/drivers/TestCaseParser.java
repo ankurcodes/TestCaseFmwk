@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import assignments.runners.test.surprisetest.WellformedParanthesis.Java.Main;
+import assignments.runners.day30questions.countpalindromesubstring.*;
 import drivers.commands.ParameterCommand;
 import util.serialize_deserialize.CommandDeSerializer;
 import util.stats.Stats;
@@ -120,11 +120,11 @@ public class TestCaseParser {
 		}
 
 		Object param1 = parameterList.get(0).read(input.nextLine());
-		// Object param2 = parameterList.get(1).read(input.nextLine());
-		// Object param3 = parameterList.get(2).read(input.nextLine());
+		//Object param2 = parameterList.get(1).read(input.nextLine());
+		//Object param3 = parameterList.get(2).read(input.nextLine());
 
-		//Days30Runner.Ques_16Test((int[]) param1, outputFile);
-		Main.test((int)param1, outputFile);
+	
+		Runner.test((String)param1,outputFile);
 		 
 	}
 

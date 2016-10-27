@@ -2,7 +2,6 @@ package assignments.runners.linkedlist.Ques_13;
 
 import assignments.commondatastructure.LinkedListNode;
 import assignments.commonutils.LinkedListUtility;
-import assignments.solutions.LinkedListSolution;
 import util.stats.Stats;
 
 public class Runner {
@@ -14,7 +13,7 @@ public class Runner {
 		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
-		LinkedListNode<Integer> headresult = LinkedListSolution.append(head,k);
+		LinkedListNode<Integer> headresult = Solution.append(head,k);
 		stats.endStat();
 		LinkedListUtility.printList(headresult,filePath);
 	}
