@@ -1,32 +1,34 @@
 package assignments.questions.linkedlist.Ques_7.selection.r;
 import java.util.Scanner;
 
-import LinkedList.Node;
+import assignments.commondatastructure.LinkedListNode;
+
+
 
 public class Main {
      
-	public static Node<Integer> takeInput()
+	public static LinkedListNode<Integer> takeInput()
 	{
 		Scanner s = new Scanner(System.in);
-		Node<Integer> head = null,tail=null;
+		LinkedListNode<Integer> head = null,tail=null;
 		System.out.println("Enter data: ");
 		int data=s.nextInt();
 		
 		while(data!=-1)
 		{
-			Node<Integer> newNode= new Node<>(data);
+			LinkedListNode<Integer> newLinkedListNode= new LinkedListNode<>(data);
 			if(head==null)
 			{
-				head=newNode;
-				tail=newNode;
+				head=newLinkedListNode;
+				tail=newLinkedListNode;
 			}
 			else
 			{
-				Node<Integer> temp=head;
+				LinkedListNode<Integer> temp=head;
 				while(temp.next!=null)
 					temp=temp.next;
-				temp.next=newNode;
-				tail.next=newNode;
+				temp.next=newLinkedListNode;
+				tail.next=newLinkedListNode;
 				tail=tail.next;
 			}
 			System.out.println("Enter data: ");
@@ -35,7 +37,7 @@ public class Main {
 		return head;
 		
 	}
-	public static void print(Node<Integer> head)
+	public static void print(LinkedListNode<Integer> head)
 	{
 		
 		while(head!=null)
@@ -51,8 +53,8 @@ public class Main {
     	
 	public static void main(String[] args) {
 		
-		Node<Integer> head = takeInput();
-		 head =solution.selectionSortRecursion(head);
+		LinkedListNode<Integer> head = takeInput();
+		 head =Solution.selectionSortRecursion(head);
 		print(head);
 		
 	}

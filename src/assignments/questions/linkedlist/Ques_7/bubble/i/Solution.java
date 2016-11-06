@@ -1,4 +1,7 @@
 package assignments.questions.linkedlist.Ques_7.bubble.i;
+
+import assignments.commondatastructure.LinkedListNode;
+
 public class Solution {
 
 	private static int length(LinkedListNode<Integer> head) {

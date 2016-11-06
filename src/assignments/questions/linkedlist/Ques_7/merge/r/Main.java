@@ -1,14 +1,8 @@
 package assignments.questions.linkedlist.Ques_7.merge.r;
 import java.util.Scanner;
-class LinkedListNode<T> {
-	public T data;
-	public LinkedListNode<T> next;
 
-	public LinkedListNode(T data) {
-		this.data = data;
-		this.next = null;
-	}
-}
+import assignments.commondatastructure.LinkedListNode;
+
 
 public class Main {
 	private static Scanner s = new Scanner(System.in);

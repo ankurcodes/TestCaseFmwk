@@ -1,3 +1,7 @@
+package assignments.questions.linkedlist.Ques_7.merge.r;
+
+import assignments.commondatastructure.LinkedListNode;
+
 public class Solution {
 
 	public static LinkedListNode<Integer> mergeSort(LinkedListNode<Integer> head) {

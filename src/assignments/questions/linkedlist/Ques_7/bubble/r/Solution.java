@@ -1,5 +1,7 @@
 package assignments.questions.linkedlist.Ques_7.bubble.r;
 
+import assignments.commondatastructure.LinkedListNode;
+
 public class Solution {
 
 	static LinkedListNode<Integer> bubbleSortRec(LinkedListNode<Integer> start) {

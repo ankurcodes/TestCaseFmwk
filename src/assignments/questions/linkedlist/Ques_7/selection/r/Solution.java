@@ -1,18 +1,19 @@
 package assignments.questions.linkedlist.Ques_7.selection.r;
-import LinkedList.Node;
+
+import assignments.commondatastructure.LinkedListNode;
 
 public class Solution {
 	
 	
 	
 	
-	public static Node<Integer> selectionSortRecursion(Node<Integer> head)
+	public static LinkedListNode<Integer> selectionSortRecursion(LinkedListNode<Integer> head)
 	{
 		if(head==null)
 		{
 			return head;
 		}
-		Node<Integer> previousA =null , currentA=null ,previousB=null , currentB=null,forwardB=null;
+		LinkedListNode<Integer> previousA =null , currentA=null ,previousB=null , currentB=null,forwardB=null;
 		
 		currentA=head;
 		previousB=currentA;

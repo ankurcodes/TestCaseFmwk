@@ -4,24 +4,8 @@ package assignments.questions.linkedlist.Ques_1;
 
 import java.util.Scanner;
 
-class LinkedListNode<T> {
-	public T data;
-	public LinkedListNode<T> next;
+import assignments.commondatastructure.LinkedListNode;
 
-	public LinkedListNode(T data) {
-		this.setData(data);
-		this.next = null;
-	}
-
-	public T getData() {
-		return data;
-	}
-
-	public void setData(T data) {
-		this.data = data;
-	}
-
-}
 
 public class Main {
 	static Scanner s = new Scanner(System.in);

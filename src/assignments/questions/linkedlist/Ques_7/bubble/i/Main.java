@@ -1,16 +1,10 @@
 package assignments.questions.linkedlist.Ques_7.bubble.i;
 import java.util.Scanner;
 
+import assignments.commondatastructure.LinkedListNode;
 
-class LinkedListNode<T> {
-	public T data;
-	public LinkedListNode<T> next;
 
-	public LinkedListNode(T data) {
-		this.data = data;
-		this.next = null;
-	}
-}
+
 
 public class Main {
 	private static Scanner s= new Scanner(System.in);
@@ -41,6 +35,6 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		print(solution.bubbleSort(input()));
+		print(Solution.bubbleSort(input()));
 	}
 }

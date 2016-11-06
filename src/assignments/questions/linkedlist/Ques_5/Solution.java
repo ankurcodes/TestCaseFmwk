@@ -1,5 +1,7 @@
 package assignments.questions.linkedlist.Ques_5;
 
+import assignments.commondatastructure.LinkedListNode;
+
 public class Solution {
 
 	public static LinkedListNode<Integer> merge(LinkedListNode<Integer> head1, LinkedListNode<Integer> head2) {

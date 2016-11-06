@@ -1,3 +1,7 @@
+package assignments.questions.linkedlist.Ques_14;
+
+import assignments.commondatastructure.LinkedListNode;
+
 public class Solution {
 	/**
 	 * Q_14: Implement kReverse(int k)

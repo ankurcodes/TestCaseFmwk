@@ -1,16 +1,11 @@
+package assignments.questions.linkedlist.Ques_11;
+
 
 
 import java.util.Scanner;
 
-class LinkedListNode<T> {
-	public T data;
-	public LinkedListNode<T> next;
+import assignments.commondatastructure.LinkedListNode;
 
-	public LinkedListNode(T data) {
-		this.data=data;
-		this.next = null;
-	}
-}
 
 public class Runner {
 	private static Scanner s = new Scanner(System.in);

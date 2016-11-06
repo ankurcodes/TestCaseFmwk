@@ -1,3 +1,5 @@
+package assignments.questions.trees.binary.CheckBalanced;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,3 +1,5 @@
+package assignments.questions.trees.binary.CheckBalanced;
+
 public class Solution {
 
 /*	Binary Tree Node class

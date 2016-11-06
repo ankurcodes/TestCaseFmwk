@@ -2,7 +2,7 @@ package assignments.questions.linkedlist.Ques_11;
 
 import assignments.commondatastructure.LinkedListNode;
 import assignments.commonutils.LinkedListUtility;
-import assignments.solutions.LinkedListSolution;
+
 import util.stats.Stats;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
 		LinkedListNode<Integer> head = LinkedListUtility.arrayToLinkedList(arr);
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
-		LinkedListNode<Integer> headresult = LinkedListSolution.sortEvenOdd(head);
+		LinkedListNode<Integer> headresult = Solution.sortEvenOdd(head);
 		stats.endStat();
 		LinkedListUtility.printList(headresult,filePath);
 	}

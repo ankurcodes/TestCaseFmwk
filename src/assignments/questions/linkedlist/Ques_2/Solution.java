@@ -1,5 +1,6 @@
 package assignments.questions.linkedlist.Ques_2;
 
+import assignments.commondatastructure.LinkedListNode;
 
 public class Solution {
 	/**

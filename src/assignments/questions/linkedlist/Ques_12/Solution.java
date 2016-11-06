@@ -1,6 +1,6 @@
 package assignments.questions.linkedlist.Ques_12;
 
-
+import assignments.commondatastructure.LinkedListNode;
 
 public class Solution {
 	public static StringBuilder result = new StringBuilder("");

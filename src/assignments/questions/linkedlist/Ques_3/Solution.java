@@ -1,5 +1,7 @@
 package assignments.questions.linkedlist.Ques_3;
 
+import assignments.commondatastructure.LinkedListNode;
+
 public class Solution {
 	/**
 	 * Q_3: Swap Nodes
