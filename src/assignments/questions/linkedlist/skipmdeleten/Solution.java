@@ -1,4 +1,4 @@
-package assignments.questions.test.surprisetest.skipmdeleten;
+package assignments.questions.linkedlist.skipmdeleten;
 
 import assignments.commondatastructure.LinkedListNode;
 

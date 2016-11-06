@@ -1,4 +1,4 @@
-package assignments.questions.test1.ques1;
+package assignments.questions.trees.binary.iscousin;
 import java.util.Scanner;
 
 class QueueEmptyException extends Exception {

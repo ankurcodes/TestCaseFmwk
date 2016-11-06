@@ -1,4 +1,4 @@
-package assignments.questions.test.surprisetest.ArrayPrint2D;
+package assignments.questions.arrays.ArrayPrint2D;
 
 
 public class Solution {

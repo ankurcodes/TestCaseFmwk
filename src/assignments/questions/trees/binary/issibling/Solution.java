@@ -1,4 +1,4 @@
-package assignments.questions.test1.issibling;
+package assignments.questions.trees.binary.issibling;
 
 public class Solution {
 	public static boolean isSibling(BinaryTreeNode<Integer> root, BinaryTreeNode<Integer> p,

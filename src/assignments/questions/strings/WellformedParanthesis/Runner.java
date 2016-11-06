@@ -1,4 +1,4 @@
-package assignments.questions.test.surprisetest.WellformedParanthesis;
+package assignments.questions.strings.WellformedParanthesis;
 
 import assignments.commonutils.ArrayUtility;
 

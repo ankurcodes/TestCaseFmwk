@@ -1,4 +1,4 @@
-package assignments.questions.test1.mergefirsthalfsecondhalf;
+package assignments.questions.linkedlist.mergefirsthalfsecondhalf;
 
 import assignments.commondatastructure.LinkedListNode;
 

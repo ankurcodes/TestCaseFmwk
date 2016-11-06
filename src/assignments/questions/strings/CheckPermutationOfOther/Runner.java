@@ -1,4 +1,4 @@
-package assignments.questions.test.surprisetest.CheckPermutationOfOther;
+package assignments.questions.strings.CheckPermutationOfOther;
 
 import assignments.commonutils.ArrayUtility;
 import util.stats.Stats;

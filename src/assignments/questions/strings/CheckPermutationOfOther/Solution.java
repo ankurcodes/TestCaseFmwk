@@ -1,4 +1,4 @@
-package assignments.questions.test.surprisetest.CheckPermutationOfOther;
+package assignments.questions.strings.CheckPermutationOfOther;
 
 public class Solution {
 

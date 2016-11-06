@@ -1,4 +1,4 @@
-package assignments.questions.test.surprisetest.ArrayPrint2D;
+package assignments.questions.arrays.ArrayPrint2D;
 
 import assignments.commonutils.ArrayUtility;
 import util.stats.Stats;
