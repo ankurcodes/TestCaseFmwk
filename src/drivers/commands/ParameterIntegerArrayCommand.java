@@ -22,7 +22,7 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 	private int diff;
 	List<Integer> arrayLengthlist = new ArrayList<Integer>(9);
 	List<Integer> rotateIndexList = new ArrayList<Integer>(9);
-	private AssignmentType currentAssignmentType= AssignmentType.ARRAY;
+	private AssignmentType currentAssignmentType= AssignmentType.LINKEDLIST;
 
 	@Override
 	public void menu() {

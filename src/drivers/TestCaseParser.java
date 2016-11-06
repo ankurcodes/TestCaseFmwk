@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import assignments.runners.day30questions.countpalindromesubstring.*;
+import assignments.questions.test1.mergefirsthalfsecondhalf.Runner;
 import drivers.commands.ParameterCommand;
 import util.serialize_deserialize.CommandDeSerializer;
 import util.stats.Stats;
@@ -124,7 +124,7 @@ public class TestCaseParser {
 		//Object param3 = parameterList.get(2).read(input.nextLine());
 
 	
-		Runner.test((String)param1,outputFile);
+		Runner.Ques_1Test((int[])param1,outputFile);
 		 
 	}
 
