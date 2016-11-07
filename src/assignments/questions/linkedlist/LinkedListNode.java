@@ -1,4 +1,4 @@
-package assignments.commondatastructure;
+package assignments.questions.linkedlist;
 
 public class LinkedListNode<T> {
 	public T data;

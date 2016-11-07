@@ -1,8 +1,8 @@
-package assignments.questions.linkedlist.Ques_2;
+package assignments.questions.linkedlist.delete_ithrecursive;
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 

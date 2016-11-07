@@ -1,7 +1,7 @@
-package assignments.questions.linkedlist.Ques_7.bubble.r;
+package assignments.questions.linkedlist.bubbleSort.r;
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 

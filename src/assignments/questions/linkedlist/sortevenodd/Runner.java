@@ -1,10 +1,10 @@
-package assignments.questions.linkedlist.Ques_11;
+package assignments.questions.linkedlist.sortevenodd;
 
 
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 public class Runner {

@@ -1,8 +1,8 @@
-package assignments.questions.linkedlist.Ques_5;
+package assignments.questions.linkedlist.merge;
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 

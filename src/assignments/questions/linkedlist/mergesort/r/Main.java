@@ -1,7 +1,7 @@
-package assignments.questions.linkedlist.Ques_7.merge.r;
+package assignments.questions.linkedlist.mergesort.r;
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 public class Main {

@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_9;
+package assignments.questions.linkedlist.ispalindrome;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 import assignments.commonutils.LinkedListUtility;
 
 import util.stats.Stats;

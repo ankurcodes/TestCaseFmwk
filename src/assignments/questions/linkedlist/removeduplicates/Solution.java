@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_4;
+package assignments.questions.linkedlist.removeduplicates;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	/**

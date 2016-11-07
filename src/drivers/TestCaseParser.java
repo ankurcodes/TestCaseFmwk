@@ -124,7 +124,7 @@ public class TestCaseParser {
 		//Object param3 = parameterList.get(2).read(input.nextLine());
 
 	
-		Runner.Ques_1Test((int[])param1,outputFile);
+		//Runner.Ques_1Test((int[])param1,outputFile);
 		 
 	}
 

@@ -1,4 +1,4 @@
-package assignments.questions.linkedlist.Ques_7.selection.i;
+package assignments.questions.linkedlist.selectionsort.i;
 import java.util.Scanner;
 
 

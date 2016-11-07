@@ -1,10 +1,10 @@
-package assignments.questions.linkedlist.Ques_1;
+package assignments.questions.linkedlist.insertrecursive;
 
 
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 public class Main {

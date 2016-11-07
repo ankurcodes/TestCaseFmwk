@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_12;
+package assignments.questions.linkedlist.printreverserecursive;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	public static StringBuilder result = new StringBuilder("");

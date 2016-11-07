@@ -1,6 +1,6 @@
 package assignments.questions.linkedlist.mergefirsthalfsecondhalf;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class solution {
 

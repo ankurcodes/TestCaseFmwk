@@ -2,7 +2,7 @@ package assignments.questions.linkedlist.mergefirsthalfsecondhalf;
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Main {
 

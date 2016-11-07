@@ -1,4 +1,4 @@
-package assignments.questions.linkedlist.Ques_7.insertion.i;
+package assignments.questions.linkedlist.insertionsort.i;
 import java.util.Scanner;
 
 

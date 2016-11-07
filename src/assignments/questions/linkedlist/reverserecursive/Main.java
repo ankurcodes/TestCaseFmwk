@@ -1,8 +1,8 @@
-package assignments.questions.linkedlist.Ques_10.Ques_10_2;
+package assignments.questions.linkedlist.reverserecursive;
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 public class Main {

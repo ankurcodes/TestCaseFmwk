@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_6;
+package assignments.questions.linkedlist.printmiddle;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	/**

@@ -1,6 +1,6 @@
 package assignments.commonutils;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 import util.logs.writer.LogWriter;
 
 public class LinkedListUtility {

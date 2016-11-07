@@ -1,4 +1,4 @@
-package assignments.questions.linkedlist.Ques_3;
+package assignments.questions.linkedlist.swapnodes;
 
 
 
@@ -6,7 +6,7 @@ package assignments.questions.linkedlist.Ques_3;
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 public class Main {

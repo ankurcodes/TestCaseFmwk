@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_10.Ques_10_1;
+package assignments.questions.linkedlist.reverseIterative;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	/**

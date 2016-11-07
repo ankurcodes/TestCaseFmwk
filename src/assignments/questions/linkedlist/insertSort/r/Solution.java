@@ -1,4 +1,4 @@
-package assignments.questions.linkedlist.Ques_7.insertion.r;
+package assignments.questions.linkedlist.insertSort.r;
 
 
 

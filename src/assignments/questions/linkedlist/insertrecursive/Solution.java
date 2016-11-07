@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_1;
+package assignments.questions.linkedlist.insertrecursive;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	/**

@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_7.selection.r;
+package assignments.questions.linkedlist.selectionsortrecursion;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	

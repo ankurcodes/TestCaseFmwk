@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_14;
+package assignments.questions.linkedlist.kreverse;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	/**

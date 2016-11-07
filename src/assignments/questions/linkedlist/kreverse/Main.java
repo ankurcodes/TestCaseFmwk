@@ -1,7 +1,7 @@
-package assignments.questions.linkedlist.Ques_14;
+package assignments.questions.linkedlist.kreverse;
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Main {
 	static Scanner s = new Scanner(System.in);

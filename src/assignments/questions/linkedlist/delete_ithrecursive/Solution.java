@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_2;
+package assignments.questions.linkedlist.delete_ithrecursive;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 	/**

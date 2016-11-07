@@ -1,10 +1,10 @@
-package assignments.questions.linkedlist.Ques_6;
+package assignments.questions.linkedlist.printmiddle;
 
 
 
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Main {
 	private static Scanner s = new Scanner(System.in);

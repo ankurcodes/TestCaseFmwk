@@ -1,7 +1,7 @@
-package assignments.questions.linkedlist.Ques_7.selection.r;
+package assignments.questions.linkedlist.selectionsortrecursion;
 import java.util.Scanner;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 
 

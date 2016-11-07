@@ -1,6 +1,6 @@
-package assignments.questions.linkedlist.Ques_7.bubble.i;
+package assignments.questions.linkedlist.bubbleSort.i;
 
-import assignments.commondatastructure.LinkedListNode;
+import assignments.questions.linkedlist.LinkedListNode;
 
 public class Solution {
 
