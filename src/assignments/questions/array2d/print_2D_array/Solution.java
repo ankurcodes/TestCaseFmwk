@@ -1,4 +1,4 @@
-package assignments.questions.arrays.ArrayPrint2D;
+package assignments.questions.array2d.print_2D_array;
 
 
 public class Solution {

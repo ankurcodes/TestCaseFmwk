@@ -1,4 +1,4 @@
-package assignments.questions.basics.waveprint;
+package assignments.questions.basics.wave_print;
 
 public class Solution {
 	public static StringBuilder ques5Ans = new StringBuilder("");

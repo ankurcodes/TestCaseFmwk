@@ -1,9 +1,11 @@
 package drivers.commands.factory;
 
 import drivers.commands.Parameter2DIntegerArrayCommand;
+import drivers.commands.ParameterBinaryTreeCommand;
 import drivers.commands.ParameterBooleanCommand;
 import drivers.commands.ParameterCharacterCommand;
 import drivers.commands.ParameterCommand;
+import drivers.commands.ParameterGenericTreeCommand;
 import drivers.commands.ParameterIntegerArrayCommand;
 import drivers.commands.ParameterIntegerCommand;
 import drivers.commands.ParameterStringCommand;
@@ -30,6 +32,12 @@ public class ParameterCommandFactory {
 			break;
 		case INTEGER_2DARRAY:
 			command = new Parameter2DIntegerArrayCommand();
+			break;
+		case GENERICTREE:
+			command = new ParameterGenericTreeCommand();
+			break;
+		case BINARYTREE:
+			command = new ParameterBinaryTreeCommand();
 			break;
 		default:
 			break;

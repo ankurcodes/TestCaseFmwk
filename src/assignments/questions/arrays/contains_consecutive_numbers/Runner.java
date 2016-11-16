@@ -1,4 +1,4 @@
-package assignments.questions.arrays.containsconsecutivenumbers;
+package assignments.questions.arrays.contains_consecutive_numbers;
 
 import assignments.commonutils.ArrayUtility;
 import util.stats.Stats;

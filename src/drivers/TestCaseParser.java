@@ -1,4 +1,5 @@
 package drivers;
+
 import static constants.TestCaseConstants.EXT;
 import static constants.TestCaseConstants.LARGE_INPUT_FILE;
 import static constants.TestCaseConstants.LARGE_OUTPUT_FILE;
@@ -13,10 +14,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import assignments.questions.test1.mergefirsthalfsecondhalf.Runner;
+import assignments.questions.strings.redundant_bracket_In_expression.Runner;
 import drivers.commands.ParameterCommand;
 import util.serialize_deserialize.CommandDeSerializer;
 import util.stats.Stats;
+import util.zip.Zip;
 
 public class TestCaseParser {
 	public static int currentTestCaseNumber = 1;
@@ -55,20 +57,59 @@ public class TestCaseParser {
 		currentTestCaseNumber = 1;
 		readTestCaseFile(largeFolderOutputPath, false);
 		System.out.println("Successfully Completed...\n\n");
-		System.out.println("File Loc: "+smallFolderOutputPath);
+		System.out.println("File Loc: " + smallFolderOutputPath);
 		Stats stats = Stats.getStatsInstance();
 		stats.showStats();
 
 		clean();
+
 	}
 
 	private static void clean() {
-		// delete(serializedFileLoc);
-		// delete(inputFolderPath + SMALL_INPUT_FILE + EXT);
-		// delete(inputFolderPath+LARGE_INPUT_FILE+EXT);
+		delete(serializedFileLoc);
+		delete(inputFolderPath + SMALL_INPUT_FILE + EXT);
+		delete(inputFolderPath + LARGE_INPUT_FILE + EXT);
+		deleteOlderZipFile(inputFolderPath);
+		String output_zip_file = inputFolderPath + "small.zip";
+		String sourceFolder = inputFolderPath + "small/";
+
+		zip(sourceFolder, output_zip_file);
+
+		output_zip_file = outputFolderPath + "large.zip";
+		sourceFolder = outputFolderPath + "large/";
+
+		zip(sourceFolder, output_zip_file);
+		deleteDir(new File(outputFolderPath + "large/"));
+		deleteDir(new File(outputFolderPath + "small/"));
+		
 	}
 
-	public static void delete(String filePath) {
+	private static void zip(String sourceFolder, String outputFile) {
+
+		Zip appZip = new Zip();
+		appZip.zipIt(outputFile, sourceFolder);
+	}
+
+	private static void deleteOlderZipFile(String sourceFolder) {
+
+		File folder = new File(sourceFolder);
+		for (File f : folder.listFiles()) {
+			if (f.getName().endsWith(".zip")) {
+				f.delete();
+			}
+		}
+	}
+	private static void deleteDir(File file) {
+	    File[] contents = file.listFiles();
+	    if (contents != null) {
+	        for (File f : contents) {
+	            deleteDir(f);
+	        }
+	    }
+	    file.delete();
+	}
+
+	private static void delete(String filePath) {
 		try {
 			File file = new File(filePath);
 			if (file.exists()) {
@@ -104,7 +145,6 @@ public class TestCaseParser {
 	public static void runAlgo(List<ParameterCommand> parameterList, boolean small) {
 		File file;
 		String outputFile;
-
 		if (small) {
 			file = new File(inputFolderPath + SMALL_INPUT_FILE + currentTestCaseNumber + EXT);
 			outputFile = inputFolderPath + SMALL_OUTPUT_FILE + currentTestCaseNumber + EXT;
@@ -120,12 +160,9 @@ public class TestCaseParser {
 		}
 
 		Object param1 = parameterList.get(0).read(input.nextLine());
-		//Object param2 = parameterList.get(1).read(input.nextLine());
-		//Object param3 = parameterList.get(2).read(input.nextLine());
-
-	
-		//Runner.Ques_1Test((int[])param1,outputFile);
-		 
+		// Object param2 = parameterList.get(1).read(input.nextLine());
+		// Object param3 = parameterList.get(2).read(input.nextLine());
+		Runner.test((String) param1, outputFile);
 	}
 
 	private static void cleanIOFolders(String filePath) {

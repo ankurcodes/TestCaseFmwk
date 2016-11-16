@@ -1,4 +1,4 @@
-package assignments.questions.arrays.possiblesortedcombinations;
+package assignments.questions.arrays.possible_sorted_combinations;
 
 import assignments.commonutils.ArrayUtility;
 

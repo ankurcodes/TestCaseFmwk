@@ -1,4 +1,4 @@
-package assignments.questions.arrays.searchinrotatedarray;
+package assignments.questions.arrays.search_in_rotated_array;
 
 public class Solution {
 	/**

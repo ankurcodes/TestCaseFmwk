@@ -1,4 +1,4 @@
-package assignments.questions.basics.counttrailingzerosinfact;
+package assignments.questions.basics.count_trailing_zeros_infact;
 
 public class Solution {
 

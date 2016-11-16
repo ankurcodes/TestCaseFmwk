@@ -1,4 +1,4 @@
-package assignments.questions.arrays.nextgreaterelement;
+package assignments.questions.arrays.next_greater_element;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ public class Runner {
 	/**
 	 * Q_15
 	 */
-	public static void Ques_15Test(int arr[], String filePath) {
+	public static void test(int arr[], String filePath) {
 		Stats stats = Stats.getStatsInstance();
 		stats.startStat();
 		ArrayList<Integer> resultList = Solution.nextGreaterElement(ArrayUtility.arrayToList(arr));

@@ -40,4 +40,18 @@ public static void print(String ans, String filePath) {
 		}
 		return list;
 	}
+	//print 2d array
+	public static void print2DArray(int input[][],String filePath) {
+		StringBuilder resultString = new StringBuilder("");
+		for(int i = 0; i < input.length; i++) {
+			for(int j = 0; j < input[i].length; j++){
+				resultString.append(input[i][j] + " ");
+			}
+			resultString.append("\r\n");
+		}
+		CommonUtility.printToConsole(resultString.toString());
+		LogWriter logger = new LogWriter(filePath);
+		logger.writing(resultString.toString());
+	
+	}
 }

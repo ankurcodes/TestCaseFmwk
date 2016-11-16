@@ -1,4 +1,4 @@
-package assignments.questions.basics.numberofnumbersgreater;
+package assignments.questions.basics.number_of_numbers_greater;
 
 public class Solution {
 

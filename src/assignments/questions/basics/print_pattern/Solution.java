@@ -1,4 +1,4 @@
-package assignments.questions.basics.printpattern;
+package assignments.questions.basics.print_pattern;
 
 public class Solution {
 	 static StringBuilder ques11Ans = new StringBuilder();

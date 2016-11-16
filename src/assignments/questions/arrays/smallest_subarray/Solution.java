@@ -1,4 +1,4 @@
-package assignments.questions.arrays.smallestsubarray;
+package assignments.questions.arrays.smallest_subarray;
 
 import java.util.ArrayList;
 

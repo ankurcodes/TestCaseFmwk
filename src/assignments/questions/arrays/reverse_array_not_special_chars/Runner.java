@@ -1,4 +1,4 @@
-package assignments.questions.arrays.reversearraynotspecialchars;
+package assignments.questions.arrays.reverse_array_not_special_chars;
 
 import assignments.commonutils.ArrayUtility;
 import util.stats.Stats;

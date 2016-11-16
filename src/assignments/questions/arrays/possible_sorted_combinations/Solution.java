@@ -1,4 +1,4 @@
-package assignments.questions.arrays.possiblesortedcombinations;
+package assignments.questions.arrays.possible_sorted_combinations;
 
 public class Solution {
 	public static long possibleSortedCombinations(int[] input1, int[] input2) {

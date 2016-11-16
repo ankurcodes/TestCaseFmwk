@@ -27,20 +27,19 @@ public class TestCaseGenerator {
 		parameterDataTypeMap.put(4, ParameterTypeEnum.BOOLEAN);
 		parameterDataTypeMap.put(5, ParameterTypeEnum.STRING);
 		parameterDataTypeMap.put(6, ParameterTypeEnum.INTEGER_2DARRAY);
+		parameterDataTypeMap.put(7, ParameterTypeEnum.GENERICTREE);
+		parameterDataTypeMap.put(8, ParameterTypeEnum.BINARYTREE);
 	}
 
 	public static void main(String[] args) throws IOException {
 		controller = TestCaseController.getInstance();
 		Scanner s = new Scanner(System.in);
 		System.out.println("Question Name: ");
-
 		quesName = s.next() + "/";
 		System.out.println("Number of input parameters: ");
-
 		numberOfInputParameter = s.nextInt();
 		for (int i = 0; i < numberOfInputParameter; i++) {
 			System.out.println("*****************PARAMETER: " + (i + 1) + "  *****************");
-
 			int dataType = 0;
 			do {
 				if (!(dataType >= 1 || dataType <= 9)) {
@@ -68,6 +67,7 @@ public class TestCaseGenerator {
 		System.out.println("...... 4: Boolean");
 		System.out.println("...... 5: String Text");
 		System.out.println("...... 6: Integer 2D Array");
-
+		System.out.println("...... 7: GenericTree");
+		System.out.println("...... 8: BinaryTree");
 	}
 }

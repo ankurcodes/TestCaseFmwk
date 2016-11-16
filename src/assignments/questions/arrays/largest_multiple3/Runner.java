@@ -1,4 +1,4 @@
-package assignments.questions.arrays.largestmultiple3;
+package assignments.questions.arrays.largest_multiple3;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package assignments.questions.basics.numberofnumbers;
+package assignments.questions.basics.number_of_numbers;
 
 public class Solution {
 	/**

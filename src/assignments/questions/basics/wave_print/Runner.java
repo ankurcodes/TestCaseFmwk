@@ -1,4 +1,4 @@
-package assignments.questions.basics.waveprint;
+package assignments.questions.basics.wave_print;
 
 import assignments.commonutils.ArrayUtility;
 import util.stats.Stats;

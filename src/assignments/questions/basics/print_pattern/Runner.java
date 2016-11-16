@@ -1,4 +1,4 @@
-package assignments.questions.basics.printpattern;
+package assignments.questions.basics.print_pattern;
 
 import assignments.commonutils.ArrayUtility;
 

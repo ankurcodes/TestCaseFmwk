@@ -1,4 +1,4 @@
-package assignments.questions.arrays.distinctnumberinwindow;
+package assignments.questions.arrays.distinct_number_in_window;
 
 
 import java.util.Scanner;

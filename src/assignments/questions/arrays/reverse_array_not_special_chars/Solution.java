@@ -1,4 +1,4 @@
-package assignments.questions.arrays.reversearraynotspecialchars;
+package assignments.questions.arrays.reverse_array_not_special_chars;
 
 public class Solution {
 	/**

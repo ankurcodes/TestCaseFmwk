@@ -1,4 +1,4 @@
-package assignments.questions.basics.titletonumber;
+package assignments.questions.basics.title_to_number;
 
 public class Solution {
 	/*

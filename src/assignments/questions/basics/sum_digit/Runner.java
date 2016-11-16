@@ -1,4 +1,4 @@
-package assignments.questions.basics.sumDigit;
+package assignments.questions.basics.sum_digit;
 
 import assignments.commonutils.ArrayUtility;
 

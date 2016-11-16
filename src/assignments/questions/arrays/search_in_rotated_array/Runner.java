@@ -1,4 +1,4 @@
-package assignments.questions.arrays.searchinrotatedarray;
+package assignments.questions.arrays.search_in_rotated_array;
 
 import assignments.commonutils.ArrayUtility;
 import util.stats.Stats;

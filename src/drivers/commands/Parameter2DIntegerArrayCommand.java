@@ -2,6 +2,7 @@ package drivers.commands;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 	private int bredth;
 	private int min;
 	private int max;
+	private boolean isItSquareMatrix;
 	List<Integer> arrayLengthlist;
 	List<Integer> arrayBredthlist;
 
@@ -32,6 +34,8 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 		System.out.println("1: 2D Array ");
 
 		whatMattersArray = s.nextInt();
+		System.out.println("Is it Square Matrix ");
+		isItSquareMatrix = s.nextBoolean();
 
 		switch (whatMattersArray) {
 		case 1:
@@ -46,7 +50,6 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 			
 			min = s.nextInt();
 			System.out.println("Max Element:");
-			
 			max = s.nextInt();
 			break;
 
@@ -54,17 +57,18 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 			break;
 
 		}
-		arrayLengthlist = getArrayListLength(length);
-		arrayBredthlist = getArrayListLength(bredth);
+		arrayLengthlist = getArrayListLength(length,isItSquareMatrix);
+		arrayBredthlist = getArrayListLength(bredth,isItSquareMatrix);
 	
 	}
 
-	public ArrayList<Integer> getArrayListLength(int length) {
+	public ArrayList<Integer> getArrayListLength(int length, boolean squareMatrix) {
 		int digitLength = (int) (Math.log10(length));
+		ArrayList<Integer> list=null;
 		switch (digitLength) {
 		case 0:
 			int count = 0;
-			ArrayList<Integer> list = new ArrayList<>();
+			list = new ArrayList<>();
 			while (count <= length) {
 				list.add(count);
 				count++;
@@ -73,29 +77,41 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 				list.add(length);
 				count++;
 			}
-			return list;
+			break;
 		case 1:
-			return new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, length));
+			list =  new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, length));
+			break;
 		case 2:
-			return new ArrayList<Integer>(Arrays.asList(1, 10, 30, 40, 50, 60, 70, 80, length));
+			list =  new ArrayList<Integer>(Arrays.asList(1, 10, 30, 40, 50, 60, 70, 80, length));
+			break;
 		case 3:
-			return new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 75, 100, 250, 500, length));
+			list= new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 75, 100, 250, 500, length));
+			break;
 		case 4:
-			return new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 100, 500, 1000, 5000, length));
+			list =  new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 100, 500, 1000, 5000, length));
+			break;
 		case 5:
-			return new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 75, 100, 1000, 10000, length));
+			list =  new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 75, 100, 1000, 10000, length));
+			break;
 		case 6:
-			return new ArrayList<Integer>(Arrays.asList(1, 20, 50, 75, 100, 1000, 10000, 100000, length));
+			list= new ArrayList<Integer>(Arrays.asList(1, 20, 50, 75, 100, 1000, 10000, 100000, length));
+			break;
 		case 7:
-			return new ArrayList<Integer>(Arrays.asList(1, 20, 50, 75, 100, 1000, 10000, 100000, length));
+			list= new ArrayList<Integer>(Arrays.asList(1, 20, 50, 75, 100, 1000, 10000, 100000, length));
+			break;
 		case 8:
-			return new ArrayList<Integer>(Arrays.asList(1, 5, 10, 100, 1000, 10000, 100000, 1000000, 10000000, length));
+			list= new ArrayList<Integer>(Arrays.asList(1, 5, 10, 100, 1000, 10000, 100000, 1000000, 10000000, length));
+			break;
 		case 9:
-			return new ArrayList<Integer>(
+			list= new ArrayList<Integer>(
 					Arrays.asList(1, 5, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, length));
-		default:
-			return null;
+			break;
+
 		}
+		if(!isItSquareMatrix){
+			Collections.shuffle(list.subList(3, list.size()-1));
+		}
+		return list;
 	}
 
 	public int[][] logic(int number) {

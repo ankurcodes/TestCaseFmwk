@@ -1,4 +1,4 @@
-package assignments.questions.arrays.nextgreaterelement;
+package assignments.questions.arrays.next_greater_element;
 
 import java.util.ArrayList;
 import java.util.Collections;
