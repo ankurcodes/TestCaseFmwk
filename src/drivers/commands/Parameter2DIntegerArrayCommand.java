@@ -59,55 +59,10 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 		}
 		arrayLengthlist = getArrayListLength(length,isItSquareMatrix);
 		arrayBredthlist = getArrayListLength(bredth,isItSquareMatrix);
-	
 	}
 
 	public ArrayList<Integer> getArrayListLength(int length, boolean squareMatrix) {
-		int digitLength = (int) (Math.log10(length));
-		ArrayList<Integer> list=null;
-		switch (digitLength) {
-		case 0:
-			int count = 0;
-			list = new ArrayList<>();
-			while (count <= length) {
-				list.add(count);
-				count++;
-			}
-			while (count <= 9) {
-				list.add(length);
-				count++;
-			}
-			break;
-		case 1:
-			list =  new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, length));
-			break;
-		case 2:
-			list =  new ArrayList<Integer>(Arrays.asList(1, 10, 30, 40, 50, 60, 70, 80, length));
-			break;
-		case 3:
-			list= new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 75, 100, 250, 500, length));
-			break;
-		case 4:
-			list =  new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 100, 500, 1000, 5000, length));
-			break;
-		case 5:
-			list =  new ArrayList<Integer>(Arrays.asList(1, 10, 20, 50, 75, 100, 1000, 10000, length));
-			break;
-		case 6:
-			list= new ArrayList<Integer>(Arrays.asList(1, 20, 50, 75, 100, 1000, 10000, 100000, length));
-			break;
-		case 7:
-			list= new ArrayList<Integer>(Arrays.asList(1, 20, 50, 75, 100, 1000, 10000, 100000, length));
-			break;
-		case 8:
-			list= new ArrayList<Integer>(Arrays.asList(1, 5, 10, 100, 1000, 10000, 100000, 1000000, 10000000, length));
-			break;
-		case 9:
-			list= new ArrayList<Integer>(
-					Arrays.asList(1, 5, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, length));
-			break;
-
-		}
+		ArrayList<Integer> list = ParameterCommandUtil.getArrayListLength(length);
 		if(!isItSquareMatrix){
 			Collections.shuffle(list.subList(3, list.size()-1));
 		}
@@ -134,7 +89,7 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 	 * 2D Array Incomplete
 	 */
 	@Override
-	public boolean execute(ArrayList<String> result) {
+	public void execute(ArrayList<String> result) {
 		
 		int arr[][] = logic(whatMattersArray);
 		StringBuilder str = new StringBuilder();
@@ -147,7 +102,6 @@ public class Parameter2DIntegerArrayCommand implements ParameterCommand {
 
 		}
 		result.add(str.toString());
-		return true;
 	}
 
 

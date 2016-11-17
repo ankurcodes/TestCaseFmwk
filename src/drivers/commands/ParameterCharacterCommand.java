@@ -51,10 +51,9 @@ public class ParameterCharacterCommand implements ParameterCommand {
 	}
 
 	@Override
-	public boolean execute(ArrayList<String> result) {
+	public void execute(ArrayList<String> result) {
 		char ans = logic(whatMattersCharacter);
 		result.add(ans + "");
-		return true;
 	}
 
 	@Override

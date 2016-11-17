@@ -22,14 +22,49 @@ public class TreeUtility {
 		return node;
 	}
 
+	private static ArrayList<Integer> constructCompleteBinaryTree(ArrayList<Integer> list, int min, int max) {
+		Random rn = new Random();
+		ArrayList<Integer> result = new ArrayList<>();
+		int count = 1;
+		for (int levelNodes : list) {
+			for (int i = 0; i < levelNodes; i++) {
+				if (count == list.size()) {
+					result.add(-1);
+				} else {
+					int num = rn.nextInt(max - min + 1) + min;
+					result.add(num);
+				}
+			}
+			count++;
+		}
+		return result;
+	}
+
 	// read from array that may contain -1
-	public static BinaryTreeNode<Integer> constructBinaryTreeLevelWise(BinaryTreeType treeType, int size) {
-		int array[];
+	public static ArrayList<Integer> constructBinaryTreeLevelWise(BinaryTreeType treeType, int size, int min, int max) {
+		ArrayList<Integer> list = new ArrayList<>();
+		Random rn = new Random();
 		switch (treeType) {
-		// case COMPLETE_BINARY_TREE:
-		// array = ;
-		// case RANDOM_BINARY_TREE:
-		// array = ;
+		case COMPLETE_BINARY_TREE:
+			int level = 0;
+			int arr[] = { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072,
+					262144, 524288, 1048576 };
+			while (level != size) {
+				list.add(arr[level++]);
+			}
+			return constructCompleteBinaryTree(list, min, max);
+
+		case RANDOM_BINARY_TREE:
+			while (true) {
+				int randomNum = rn.nextInt(3);
+				size = size - randomNum;
+				if (size <= 0) {
+					break;
+				}
+				list.add(randomNum);
+			}
+			break;
+
 		// case COMPLETE_BST:
 		// array = ;
 		// case RANDOM_BST:
@@ -63,18 +98,19 @@ public class TreeUtility {
 			}
 
 		}
-		return root;
+		return null;
 	}
 
 	// generic tree from an array
-	public static ArrayList<Integer> takeInputLevelWiseGenericTree(GenericTreeType treeType, int size, int min, int max) {
+	public static ArrayList<Integer> takeInputLevelWiseGenericTree(GenericTreeType treeType, int size, int min,
+			int max) {
 		// need to create an array of sum of all array will be equal to size...
 		ArrayList<Integer> list = new ArrayList<>();
 		Random rn = new Random();
 		switch (treeType) {
 		case COMPLETE_GENERIC_TREE:
 			while (true) {
-				int randomNum = rn.nextInt(10) + 1;
+				int randomNum = rn.nextInt(9) + 1;
 				size = size - randomNum;
 				if (size <= 0) {
 					break;
@@ -83,7 +119,7 @@ public class TreeUtility {
 			}
 		case RANDOM_GENERIC_TREE:
 			while (true) {
-				int randomNum = rn.nextInt(9);
+				int randomNum = rn.nextInt(10);
 				size = size - randomNum;
 				if (size <= 0) {
 					break;

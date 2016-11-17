@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 public class ParameterIntegerCommand implements ParameterCommand {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private int whatMattersInteger;
 	private int min;
@@ -51,10 +48,9 @@ public class ParameterIntegerCommand implements ParameterCommand {
 	}
 
 	@Override
-	public boolean execute(ArrayList<String> result) {
+	public void execute(ArrayList<String> result) {
 		int ans = logic(whatMattersInteger);
 		result.add(ans + "");
-		return true;
 	}
 
 	@Override
