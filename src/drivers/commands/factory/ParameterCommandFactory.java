@@ -8,6 +8,7 @@ import drivers.commands.ParameterCommand;
 import drivers.commands.ParameterGenericTreeCommand;
 import drivers.commands.ParameterIntegerArrayCommand;
 import drivers.commands.ParameterIntegerCommand;
+import drivers.commands.ParameterLinkedListCommand;
 import drivers.commands.ParameterStringCommand;
 import drivers.commands.enums.ParameterTypeEnum;
 
@@ -32,6 +33,9 @@ public class ParameterCommandFactory {
 			break;
 		case INTEGER_2DARRAY:
 			command = new Parameter2DIntegerArrayCommand();
+			break;
+		case LINKEDLIST:
+			command = new ParameterLinkedListCommand();
 			break;
 		case GENERICTREE:
 			command = new ParameterGenericTreeCommand();

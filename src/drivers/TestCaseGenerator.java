@@ -21,14 +21,15 @@ public class TestCaseGenerator {
 	static Map<Integer, drivers.commands.enums.ParameterTypeEnum> parameterDataTypeMap;
 	static {
 		parameterDataTypeMap = new HashMap<Integer, drivers.commands.enums.ParameterTypeEnum>();
-		parameterDataTypeMap.put(1, ParameterTypeEnum.INTEGER);
-		parameterDataTypeMap.put(2, ParameterTypeEnum.CHARACTER);
-		parameterDataTypeMap.put(3, ParameterTypeEnum.INTEGERARRAY);
-		parameterDataTypeMap.put(4, ParameterTypeEnum.BOOLEAN);
-		parameterDataTypeMap.put(5, ParameterTypeEnum.STRING);
+		parameterDataTypeMap.put(1, ParameterTypeEnum.BOOLEAN);
+		parameterDataTypeMap.put(2, ParameterTypeEnum.INTEGER);
+		parameterDataTypeMap.put(3, ParameterTypeEnum.CHARACTER);
+		parameterDataTypeMap.put(4, ParameterTypeEnum.STRING);
+		parameterDataTypeMap.put(5, ParameterTypeEnum.INTEGERARRAY);
 		parameterDataTypeMap.put(6, ParameterTypeEnum.INTEGER_2DARRAY);
-		parameterDataTypeMap.put(7, ParameterTypeEnum.GENERICTREE);
-		parameterDataTypeMap.put(8, ParameterTypeEnum.BINARYTREE);
+		parameterDataTypeMap.put(7, ParameterTypeEnum.LINKEDLIST);
+		parameterDataTypeMap.put(8, ParameterTypeEnum.GENERICTREE);
+		parameterDataTypeMap.put(9, ParameterTypeEnum.BINARYTREE);
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -54,6 +55,9 @@ public class TestCaseGenerator {
 			parameterCommand.menu();
 			controller.putParameter(parameterCommand);
 		}
+
+		System.out.printf("%n%n%n"+"..........OUTPUT LOGS.........."+"%n");
+	
 		ArrayList<ArrayList<ArrayList<String>>> x = controller.generateParameters();
 		TestCaseWriter.write(x);
 		CommandSerializer.serializeParameterList(TestCaseController.parameterList);
@@ -61,13 +65,14 @@ public class TestCaseGenerator {
 
 	public static void displayDataMenu() {
 		System.out.println("Enter Data Type");
-		System.out.println("...... 1: Integer");
-		System.out.println("...... 2: Character");
-		System.out.println("...... 3: Integer Array");
-		System.out.println("...... 4: Boolean");
-		System.out.println("...... 5: String Text");
+		System.out.println("...... 1: Boolean");
+		System.out.println("...... 2: Integer");
+		System.out.println("...... 3: Character");
+		System.out.println("...... 4: String Text");
+		System.out.println("...... 5: Integer Array");
 		System.out.println("...... 6: Integer 2D Array");
-		System.out.println("...... 7: GenericTree");
-		System.out.println("...... 8: BinaryTree");
+		System.out.println("...... 7: LinkedList");
+		System.out.println("...... 8: GenericTree");
+		System.out.println("...... 9: BinaryTree");
 	}
 }

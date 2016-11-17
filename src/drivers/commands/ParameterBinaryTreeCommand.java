@@ -24,7 +24,6 @@ public class ParameterBinaryTreeCommand implements ParameterCommand {
 		System.out.println("1: Complete BinaryTree");
 		System.out.println("2: Random BinaryTree");
 		System.out.println("3: Complete BST");
-		System.out.println("4: Random BST");
 		whatMattersCharacter = s.nextInt();
 		switch(whatMattersCharacter){
 		case 1:
@@ -49,20 +48,20 @@ public class ParameterBinaryTreeCommand implements ParameterCommand {
 	
 
 	public ArrayList<Integer> logic(int number) {
+		int currentLength = treeListLength.remove(0);
+		
 		ArrayList<Integer> tree = null;
 		switch (number) {
 		case 1:
-			tree = TreeUtility.constructBinaryTreeLevelWise(BinaryTreeType.COMPLETE_BINARY_TREE,size,min,max);
+			tree = TreeUtility.constructBinaryTreeLevelWise(BinaryTreeType.COMPLETE_BINARY_TREE,currentLength,min,max);
 			break;
 		case 2:
-			tree = TreeUtility.constructBinaryTreeLevelWise(BinaryTreeType.RANDOM_BINARY_TREE,size,min,max);
+			tree = TreeUtility.constructBinaryTreeLevelWise(BinaryTreeType.RANDOM_BINARY_TREE,currentLength,min,max);
 			break;
 		case 3:
-			tree = TreeUtility.constructBinaryTreeLevelWise(BinaryTreeType.COMPLETE_BST,size,min,max);
+			tree = TreeUtility.constructBinaryTreeLevelWise(BinaryTreeType.COMPLETE_BST,currentLength,min,max);
 			break;
-		case 4:
-			tree = TreeUtility.constructBinaryTreeLevelWise(BinaryTreeType.RANDOM_BST,size,min,max);
-			break;
+
 		default:
 			return null;
 

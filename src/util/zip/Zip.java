@@ -57,6 +57,7 @@ public class Zip {
 				in.close();
 			}
 
+			zos.flush(); //lets check this Ankur changes
 			zos.closeEntry();
 			// remember close it
 			zos.close();

@@ -6,8 +6,7 @@ import java.util.Scanner;
 
 import util.other.arrayutility.IntegerArrayUtility;
 
-public class ParameterIntegerArrayCommand implements ParameterCommand {
-
+public class ParameterLinkedListCommand implements ParameterCommand {
 	private static final long serialVersionUID = 1L;
 	private static int whatMattersArray;
 	private int length;
@@ -16,24 +15,22 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 	private int diff;
 	List<Integer> arrayLengthlist = new ArrayList<Integer>(9);
 	List<Integer> rotateIndexList = new ArrayList<Integer>(9);
-
+	
 	@Override
 	public void menu() {
-
 		Scanner s = new Scanner(System.in);
-
 		System.out.println("Enter choice ");
-		System.out.println("1: Random Array");
-		System.out.println("2: Sorted Increasing Array");
-		System.out.println("3: Sorted Increasing Array (duplicates)");
-		System.out.println("4: Sorted Decreasing Array");
-		System.out.println("5: Sorted Decreasing Array (duplicates)");
-		System.out.println("6. Rotated Increasing Array");
-		System.out.println("7. Rotated Decreasing Array");
-		System.out.println("8. Consecutive Unsorted Array");
+		System.out.println("1: Random LinkedList");
+		System.out.println("2: Sorted Increasing LinkedList");
+		System.out.println("3: Sorted Increasing LinkedList (duplicates)");
+		System.out.println("4: Sorted Decreasing LinkedList");
+		System.out.println("5: Sorted Decreasing LinkedList (duplicates)");
+		System.out.println("6. Rotated Increasing LinkedList");
+		System.out.println("7. Rotated Decreasing LinkedList");
+		System.out.println("8. Consecutive Unsorted LinkedList");
 
 		whatMattersArray = s.nextInt();
-		System.out.println("Array Length:");
+		System.out.println("LinkedList Length:");
 		length = s.nextInt();
 
 		switch (whatMattersArray) {
@@ -42,21 +39,21 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 		case 3:
 		case 4:
 		case 5:
-			System.out.println("Array Min Element");
+			System.out.println("LinkedList Min Element");
 			min = s.nextInt();
-			System.out.println("Array Max Element");
+			System.out.println("LinkedList Max Element");
 			max = s.nextInt();
 			break;
 		case 6:
 		case 7:
-			System.out.println("Array Min Element");
+			System.out.println("LinkedList Min Element");
 			min = s.nextInt();
-			System.out.println("Array Max Element");
+			System.out.println("LinkedList Max Element");
 			max = s.nextInt();
 			rotateIndexList = ParameterCommandUtil.getArrayListLength(length);
 			break;
 		case 8:
-			System.out.println("Array Min Element");
+			System.out.println("LinkedList Min Element");
 			min = s.nextInt();
 			System.out.println("Diff value");
 			diff = s.nextInt();
@@ -95,16 +92,17 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 		default:
 			return null;
 		}
+
 	}
 
 	@Override
 	public void execute(ArrayList<String> result) {
 		StringBuilder str = new StringBuilder();
 		int arr[] = logic(whatMattersArray);
-		str.append(arr.length + " ");
 		for (int j = 0; j < arr.length; j++) {
 			str.append(arr[j] + " ");
 		}
+		str.append(-1);
 		result.add(str.toString());
 	}
 
@@ -112,12 +110,13 @@ public class ParameterIntegerArrayCommand implements ParameterCommand {
 	public int[] read(String line) {
 		String[] valueStr = new String(line).trim().split(" ");
 		int[] inputArrayParameter = new int[valueStr.length - 1];
-		int arrLength = Integer.parseInt(valueStr[0].trim());
-		for (int i = 0; i < arrLength; i++) {
-			if (!valueStr[i + 1].isEmpty()) {
-				inputArrayParameter[i] = Integer.parseInt(valueStr[i + 1].trim());
+
+		for (int i = 0; i < inputArrayParameter.length; i++) {
+			if (!valueStr[i].isEmpty()) {
+				inputArrayParameter[i] = Integer.parseInt(valueStr[i].trim());
 			}
 		}
 		return inputArrayParameter;
 	}
+
 }

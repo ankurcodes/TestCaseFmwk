@@ -42,7 +42,7 @@ public class TestCaseController {
 				result.add(list);
 				
 			}
-			System.out.println("Current TestCase No "+ no_of_testCases);
+			System.out.println("      TestCase: "+ no_of_testCases +" successs");
 			finalResult.add(result);
 
 		}

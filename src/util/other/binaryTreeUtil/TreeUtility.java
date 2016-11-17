@@ -2,20 +2,21 @@ package util.other.binaryTreeUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
 
-public class TreeUtility {
-	int array[];
-	// input sorted array to get complete BST
-	// input random Array to get complete Binary Tree
-	// generate random tree using queue as we did in class...
+import util.other.arrayutility.IntegerArrayUtility;
 
-	public BinaryTreeNode<Integer> sortedArrayToBST(int arr[], int start, int end) {
+public class TreeUtility {
+	
+
+	public static BinaryTreeNode<Integer> sortedArrayToBST(int arr[], int start, int end) {
+		
 		if (start > end) {
 			return null;
 		}
-		int mid = (start + end) / 2;
+		int mid = (start+end)/2;
 		BinaryTreeNode<Integer> node = new BinaryTreeNode<Integer>(arr[mid]);
 		node.left = sortedArrayToBST(arr, start, mid - 1);
 		node.right = sortedArrayToBST(arr, mid + 1, end);
@@ -40,6 +41,48 @@ public class TreeUtility {
 		return result;
 	}
 
+	static Scanner s = new Scanner(System.in);
+
+	private static ArrayList<Integer> constructRandomBinaryTree(int size, int min, int max) {
+		Random rn = new Random();
+		ArrayList<Integer> result = new ArrayList<>();
+		LinkedList<Integer> queue = new LinkedList<>();
+		queue.addLast(getRandomNumber(min, max));
+
+		int count = 1;
+		while (!queue.isEmpty()) {
+			int currentNode = queue.removeFirst();
+			if (count >= size) {
+				if (currentNode != -1) {
+					result.add(currentNode);
+					result.add(-1);
+					result.add(-1);
+				}
+				continue;
+			}
+			result.add(currentNode);
+			if (currentNode == -1) {
+				continue;
+			}
+			int leftChildData = getRandomNumber(0, 6) == 0 ? -1 : getRandomNumber(min, max);
+			if (leftChildData != -1) {
+				count++;
+			}
+			queue.addLast(leftChildData);
+			int rightChildData = getRandomNumber(0, 6) == 0 ? -1 : getRandomNumber(min, max);
+			if (rightChildData != -1) {
+				count++;
+			}
+			queue.addLast(rightChildData);
+		}
+		return result;
+	}
+
+	private static int getRandomNumber(int min, int max) {
+		Random rn = new Random();
+		return rn.nextInt(max - min) + min;
+	}
+
 	// read from array that may contain -1
 	public static ArrayList<Integer> constructBinaryTreeLevelWise(BinaryTreeType treeType, int size, int min, int max) {
 		ArrayList<Integer> list = new ArrayList<>();
@@ -52,53 +95,44 @@ public class TreeUtility {
 			while (level != size) {
 				list.add(arr[level++]);
 			}
-			return constructCompleteBinaryTree(list, min, max);
+			list = constructCompleteBinaryTree(list, min, max);
 
 		case RANDOM_BINARY_TREE:
-			while (true) {
-				int randomNum = rn.nextInt(3);
-				size = size - randomNum;
-				if (size <= 0) {
-					break;
-				}
-				list.add(randomNum);
-			}
+			list = constructRandomBinaryTree(size, min, max);
+
+		case COMPLETE_BST:
+			int sortedArr[] = IntegerArrayUtility.increasingIntegerArray(size, min, max);
+			BinaryTreeNode<Integer> tree = sortedArrayToBST(sortedArr, 0, sortedArr.length-1);
+			list = levelOrderTraversalStorage(tree);
+		default:
 			break;
-
-		// case COMPLETE_BST:
-		// array = ;
-		// case RANDOM_BST:
-		// array = ;
 		}
+		return list;
+	}
 
-		Scanner s = new Scanner(System.in);
-		System.out.println("Enter root data: ");
-		int rootData = s.nextInt();
-		if (rootData == -1) {
-			return null;
-		}
-		BinaryTreeNode<Integer> root = new BinaryTreeNode<>(rootData);
-		LinkedList<BinaryTreeNode<Integer>> queue = new LinkedList<>();
-		queue.addLast(root);
+	private static ArrayList<Integer> levelOrderTraversalStorage(BinaryTreeNode<Integer> root) {
+		ArrayList<Integer> list = new ArrayList<>();
+		Queue<BinaryTreeNode<Integer>> queue = new LinkedList<BinaryTreeNode<Integer>>();
+		queue.add(root);
 		while (!queue.isEmpty()) {
-			BinaryTreeNode<Integer> currentNode = queue.removeFirst();
-			System.out.println("Enter left child: ");
-			int leftChildData = s.nextInt();
-			if (leftChildData != -1) {
-				currentNode.left = new BinaryTreeNode<>(leftChildData);
-				queue.add(currentNode.left);
+			BinaryTreeNode<Integer> tempNode = queue.poll();
+			if(tempNode==null){
+				list.add(-1);
+				continue;
 			}
-
-			System.out.println("Enter right child: ");
-			int rightChildData = s.nextInt();
-
-			if (rightChildData != -1) {
-				currentNode.right = new BinaryTreeNode<>(rightChildData);
-				queue.addLast(currentNode.right);
+			list.add(tempNode.data);
+			if (tempNode.left != null) {
+				queue.add(tempNode.left);
+			}else{
+				queue.add(null);
 			}
-
+			if (tempNode.right != null) {
+				queue.add(tempNode.right);
+			}else{
+				queue.add(null);
+			}
 		}
-		return null;
+		return list;
 	}
 
 	// generic tree from an array
