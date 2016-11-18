@@ -2,7 +2,6 @@ package drivers.commands;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import util.other.binaryTreeUtil.GenericTreeType;
 import util.other.binaryTreeUtil.TreeUtility;
 
@@ -56,15 +55,13 @@ public class ParameterGenericTreeCommand implements ParameterCommand {
 		result.add(stringResult.toString());
 	}
 
-
 	@Override
 	public Object read(String line) {
 		String[] valueStr = new String(line).trim().split(" ");
-		int[] inputArrayParameter = new int[valueStr.length - 1];
-		int arrLength = Integer.parseInt(valueStr[0].trim());
-		for (int i = 0; i < arrLength; i++) {
-			if (!valueStr[i + 1].isEmpty()) {
-				inputArrayParameter[i] = Integer.parseInt(valueStr[i + 1].trim());
+		int[] inputArrayParameter = new int[valueStr.length];
+		for (int i = 0; i < valueStr.length; i++) {
+			if (!valueStr[i].isEmpty()) {
+				inputArrayParameter[i] = Integer.parseInt(valueStr[i].trim());
 			}
 		}
 		return inputArrayParameter;

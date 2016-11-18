@@ -1,10 +1,8 @@
 package drivers.commands;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
-import util.other.binaryTreeUtil.BinaryTreeNode;
 import util.other.binaryTreeUtil.BinaryTreeType;
 import util.other.binaryTreeUtil.TreeUtility;
 
@@ -64,10 +62,8 @@ public class ParameterBinaryTreeCommand implements ParameterCommand {
 
 		default:
 			return null;
-
 		}
 		return tree;
-
 	}
 
 	@Override
@@ -81,8 +77,14 @@ public class ParameterBinaryTreeCommand implements ParameterCommand {
 	}
 
 	@Override
-	public Object read(String line) {
-		return line.trim().charAt(0);
+	public int[] read(String line) {
+		String[] valueStr = new String(line).trim().split(" ");
+		int[] inputArrayParameter = new int[valueStr.length];
+		for (int i = 0; i < valueStr.length; i++) {
+			if (!valueStr[i].isEmpty()) {
+				inputArrayParameter[i] = Integer.parseInt(valueStr[i].trim());
+			}
+		}
+		return inputArrayParameter;
 	}
-
 }

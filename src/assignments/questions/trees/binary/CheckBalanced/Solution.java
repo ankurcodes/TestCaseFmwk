@@ -1,5 +1,7 @@
 package assignments.questions.trees.binary.CheckBalanced;
 
+import util.other.binaryTreeUtil.BinaryTreeNode;
+
 public class Solution {
 
 /*	Binary Tree Node class

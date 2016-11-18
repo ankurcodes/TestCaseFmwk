@@ -4,8 +4,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+import util.other.binaryTreeUtil.BinaryTreeNode;
+
 
 public class Solution {
+	static StringBuilder result = new StringBuilder();
 	public static void reverseLevelOrder(BinaryTreeNode<Integer> node) {
 		Stack<BinaryTreeNode<Integer>> S = new Stack<>();
 		Queue<BinaryTreeNode<Integer>> Q = new LinkedList<>();
@@ -23,7 +26,8 @@ public class Solution {
 		}
 		while (S.empty() == false) {
 			node = S.peek();
-			System.out.print(node.data + " ");
+			//System.out.print(node.data + " ");
+			result.append(node.data + " ");
 			S.pop();
 		}
 	}

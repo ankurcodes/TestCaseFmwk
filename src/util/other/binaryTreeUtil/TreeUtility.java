@@ -9,14 +9,13 @@ import java.util.Scanner;
 import util.other.arrayutility.IntegerArrayUtility;
 
 public class TreeUtility {
-	
 
 	public static BinaryTreeNode<Integer> sortedArrayToBST(int arr[], int start, int end) {
-		
+
 		if (start > end) {
 			return null;
 		}
-		int mid = (start+end)/2;
+		int mid = (start + end) / 2;
 		BinaryTreeNode<Integer> node = new BinaryTreeNode<Integer>(arr[mid]);
 		node.left = sortedArrayToBST(arr, start, mid - 1);
 		node.right = sortedArrayToBST(arr, mid + 1, end);
@@ -44,7 +43,6 @@ public class TreeUtility {
 	static Scanner s = new Scanner(System.in);
 
 	private static ArrayList<Integer> constructRandomBinaryTree(int size, int min, int max) {
-		Random rn = new Random();
 		ArrayList<Integer> result = new ArrayList<>();
 		LinkedList<Integer> queue = new LinkedList<>();
 		queue.addLast(getRandomNumber(min, max));
@@ -53,13 +51,14 @@ public class TreeUtility {
 		while (!queue.isEmpty()) {
 			int currentNode = queue.removeFirst();
 			if (count >= size) {
+				result.add(currentNode);
 				if (currentNode != -1) {
-					result.add(currentNode);
 					result.add(-1);
 					result.add(-1);
 				}
 				continue;
 			}
+
 			result.add(currentNode);
 			if (currentNode == -1) {
 				continue;
@@ -68,6 +67,7 @@ public class TreeUtility {
 			if (leftChildData != -1) {
 				count++;
 			}
+
 			queue.addLast(leftChildData);
 			int rightChildData = getRandomNumber(0, 6) == 0 ? -1 : getRandomNumber(min, max);
 			if (rightChildData != -1) {
@@ -83,10 +83,9 @@ public class TreeUtility {
 		return rn.nextInt(max - min) + min;
 	}
 
-	// read from array that may contain -1
 	public static ArrayList<Integer> constructBinaryTreeLevelWise(BinaryTreeType treeType, int size, int min, int max) {
 		ArrayList<Integer> list = new ArrayList<>();
-		Random rn = new Random();
+
 		switch (treeType) {
 		case COMPLETE_BINARY_TREE:
 			int level = 0;
@@ -96,14 +95,17 @@ public class TreeUtility {
 				list.add(arr[level++]);
 			}
 			list = constructCompleteBinaryTree(list, min, max);
+			break;
 
 		case RANDOM_BINARY_TREE:
 			list = constructRandomBinaryTree(size, min, max);
+			break;
 
 		case COMPLETE_BST:
 			int sortedArr[] = IntegerArrayUtility.increasingIntegerArray(size, min, max);
-			BinaryTreeNode<Integer> tree = sortedArrayToBST(sortedArr, 0, sortedArr.length-1);
+			BinaryTreeNode<Integer> tree = sortedArrayToBST(sortedArr, 0, sortedArr.length - 1);
 			list = levelOrderTraversalStorage(tree);
+			break;
 		default:
 			break;
 		}
@@ -116,19 +118,19 @@ public class TreeUtility {
 		queue.add(root);
 		while (!queue.isEmpty()) {
 			BinaryTreeNode<Integer> tempNode = queue.poll();
-			if(tempNode==null){
+			if (tempNode == null) {
 				list.add(-1);
 				continue;
 			}
 			list.add(tempNode.data);
 			if (tempNode.left != null) {
 				queue.add(tempNode.left);
-			}else{
+			} else {
 				queue.add(null);
 			}
 			if (tempNode.right != null) {
 				queue.add(tempNode.right);
-			}else{
+			} else {
 				queue.add(null);
 			}
 		}

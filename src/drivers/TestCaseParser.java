@@ -9,12 +9,15 @@ import static constants.TestCaseConstants.TESTCASE_FOLDER_PATH;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.List;
 import java.util.Scanner;
 
-import assignments.questions.strings.redundant_bracket_In_expression.Runner;
+import assignments.questions.trees.binary.level_order_traversal_up.Runner;
 import drivers.commands.ParameterCommand;
 import util.serialize_deserialize.CommandDeSerializer;
 import util.stats.Stats;
@@ -61,7 +64,7 @@ public class TestCaseParser {
 		Stats stats = Stats.getStatsInstance();
 		stats.showStats();
 
-		clean();
+		// clean();
 
 	}
 
@@ -81,7 +84,7 @@ public class TestCaseParser {
 		zip(sourceFolder, output_zip_file);
 		deleteDir(new File(outputFolderPath + "large/"));
 		deleteDir(new File(outputFolderPath + "small/"));
-		
+
 	}
 
 	private static void zip(String sourceFolder, String outputFile) {
@@ -99,14 +102,15 @@ public class TestCaseParser {
 			}
 		}
 	}
+
 	private static void deleteDir(File file) {
-	    File[] contents = file.listFiles();
-	    if (contents != null) {
-	        for (File f : contents) {
-	            deleteDir(f);
-	        }
-	    }
-	    file.delete();
+		File[] contents = file.listFiles();
+		if (contents != null) {
+			for (File f : contents) {
+				deleteDir(f);
+			}
+		}
+		file.delete();
 	}
 
 	private static void delete(String filePath) {
@@ -124,7 +128,6 @@ public class TestCaseParser {
 
 	public static void readTestCaseFile(String fileName, boolean small) throws IOException {
 		try {
-
 			if (small) {
 				for (int i = 1; i <= 3; i++) {
 					runAlgo(parameterList, small);
@@ -136,7 +139,6 @@ public class TestCaseParser {
 					currentTestCaseNumber++;
 				}
 			}
-
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -162,7 +164,8 @@ public class TestCaseParser {
 		Object param1 = parameterList.get(0).read(input.nextLine());
 		// Object param2 = parameterList.get(1).read(input.nextLine());
 		// Object param3 = parameterList.get(2).read(input.nextLine());
-		Runner.test((String) param1, outputFile);
+
+		Runner.test((int[]) param1, outputFile);
 	}
 
 	private static void cleanIOFolders(String filePath) {

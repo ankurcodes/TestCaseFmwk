@@ -1,5 +1,7 @@
 package assignments.questions.trees.generic.ReplaceWithDepth;
 
+import util.other.binaryTreeUtil.GenericTreeNode;
+
 public class Solution {
 
 /*	TreeNode structure 
@@ -14,16 +16,16 @@ public class Solution {
 		}
 	}*/
 	
-	public static void replaceWithDepthValue(TreeNode<Integer> root){
+	public static void replaceWithDepthValue(GenericTreeNode<Integer> root){
 		if(root == null){
 			return;
 		}
 		 replaceWithDepthValue(root,0);
 	}
 	
-	public static void replaceWithDepthValue(TreeNode<Integer> root, int depth){
+	public static void replaceWithDepthValue(GenericTreeNode<Integer> root, int depth){
 		root.data = depth;
-		for(TreeNode<Integer> child : root.children){
+		for(GenericTreeNode<Integer> child : root.children){
 			replaceWithDepthValue(child, depth + 1);
 		}	
 	}
