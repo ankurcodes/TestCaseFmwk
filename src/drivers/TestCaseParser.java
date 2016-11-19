@@ -9,15 +9,12 @@ import static constants.TestCaseConstants.TESTCASE_FOLDER_PATH;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.List;
 import java.util.Scanner;
 
-import assignments.questions.trees.binary.level_order_traversal_up.Runner;
+import assignments.questions.arrays.occur_more_than_nby2.Runner;
 import drivers.commands.ParameterCommand;
 import util.serialize_deserialize.CommandDeSerializer;
 import util.stats.Stats;
@@ -63,9 +60,7 @@ public class TestCaseParser {
 		System.out.println("File Loc: " + smallFolderOutputPath);
 		Stats stats = Stats.getStatsInstance();
 		stats.showStats();
-
 		// clean();
-
 	}
 
 	private static void clean() {
